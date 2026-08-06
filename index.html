@@ -17,35 +17,27 @@
       margin: 0 auto;
       overflow-x: hidden;
     }
-    @media (prefers-color-scheme: dark) {
-      body { color: #e8e8e8; background-color: #121212; }
-      a { color: #56b4e9; }
-      a:visited { color: #b4a7d6; }
-      .header-title { color: #e8e8e8; }
-      .header-subtitle { color: #aaa; }
-      .scope-statement { color: #999; }
-      .research-themes { color: #999; }
-      h2 { border-bottom-color: #333; }
-      footer { border-top-color: #333; color: #aaa; }
-    }
     header { border-bottom: 2px solid #F37021; padding-bottom: 2rem; margin-bottom: 2rem; }
     .header-title { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
     .header-subtitle { font-size: 1rem; font-weight: 400; color: #666; margin-bottom: 1rem; }
     .header-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
-    .header-links a { color: #F37021; text-decoration: none; border-bottom: 1px solid transparent; }
-    .header-links a:hover { border-bottom: 1px solid #F37021; }
+    .header-links a { color: #C1440E; text-decoration: none; border-bottom: 1px solid transparent; }
+    .header-links a:hover { border-bottom: 1px solid #C1440E; }
     .scope-statement { font-size: 0.95rem; color: #555; margin-bottom: 1rem; font-style: italic; }
     .research-themes { font-size: 0.95rem; color: #555; margin-bottom: 0; }
     main { display: flex; flex-direction: column; gap: 2.5rem; }
     section { display: flex; flex-direction: column; gap: 1.5rem; }
-    h2 { font-size: 1.4rem; font-weight: 700; color: #F37021; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; color: #C1440E; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
     ol, ul { list-style-position: outside; margin-left: 1.5rem; }
     li { margin-bottom: 1.5rem; line-height: 1.7; }
     .badge {
-      display: inline-block; background-color: #F37021; color: #ffffff;
+      display: inline-block; background-color: #C1440E; color: #ffffff;
       font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.65rem;
       border-radius: 12px; margin-top: 0.5rem;
     }
+.doi { display: block; margin-top: 0.35rem; font-size: 0.85rem; color: #C1440E; text-decoration: none; word-break: break-all; }
+    .doi:hover { text-decoration: underline; }
+    .doi-note { font-size: 0.85rem; color: #555; margin-top: 0.75rem; }
     strong { font-weight: 700; }
     em { font-style: italic; }
     footer {
@@ -54,6 +46,25 @@
     }
     footer a { color: #F37021; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+    /* Dark palette LAST: an equal-specificity rule declared later wins,
+       so these overrides must sit after every light-mode declaration. */
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background-color: #121212; }
+      a { color: #ffb37a; }
+      a:visited { color: #ffb37a; }
+      .header-title { color: #ffffff; }
+      .header-subtitle { color: #c9c9c9; }
+      .header-links a { color: #ffb37a; }
+      .header-links a:hover { border-bottom-color: #ffb37a; }
+      .scope-statement { color: #b5b5b5; }
+      .research-themes { color: #c9c9c9; }
+      h2 { color: #ff9247; border-bottom-color: #3a3a3a; }
+      .badge { background-color: #ff8534; color: #1a1a1a; }
+      footer { border-top-color: #3a3a3a; color: #c9c9c9; }
+      footer a { color: #ffb37a; }
+      .doi { color: #ffb37a; }
+      .doi-note { color: #b5b5b5; }
+    }
     @media (max-width: 600px) {
       body { padding: 1rem; }
       .header-title { font-size: 1.5rem; }
@@ -75,6 +86,8 @@
       <a href="mailto:phongbayesian.phd@gmail.com">phongbayesian.phd@gmail.com</a>
     </div>
     <p class="scope-statement">Published or accepted / in press only. Work under review is not listed.</p>
+    <p class="doi-note">Verified author identifier: <a class="doi" href="https://orcid.org/0009-0001-7790-5671">https://orcid.org/0009-0001-7790-5671</a>
+    A DOI link is printed for every item that has a registered DOI. Items without one are not yet deposited by their publisher.</p>
     <p class="research-themes"><strong>Research themes:</strong> retrieval-augmented generation, multi-agent LLM systems, Model Context Protocol safe computation, Bayesian inference, causal and uplift analytics, fuzzy MCDM, stochastic stability.</p>
   </header>
 
@@ -83,7 +96,8 @@
       <h2>Journal Articles (4)</h2>
       <ol>
         <li>
-          Ho, T.-L., <strong>Lam, T.-P.</strong> "EduMSRA: A Multi-Source Educational Research Agent Integrating RAG and MCP for Adaptive Intelligent Tutoring." <em>Applied Sciences</em> (MDPI), 16(9), 04400, 2026.
+          Ho, T.-L., <strong>Lam, T.-P.</strong> "EduMSRA: A Multi-Source Educational Research Agent Integrating Retrieval-Augmented Generation and Model Context Protocol for Adaptive Intelligent Tutoring Systems." <em>Applied Sciences</em> (MDPI), 16(9), 4400, 2026.
+          <a class="doi" href="https://doi.org/10.3390/app16094400">doi.org/10.3390/app16094400</a>
           <div class="badge">Q2 SCIE / Scopus</div>
         </li>
         <li>
