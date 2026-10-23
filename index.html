@@ -79,24 +79,32 @@
     .portrait { flex: 0 0 200px; width: 200px; height: 260px; border-radius: 12px; object-fit: cover; object-position: top; border: 3px solid #C1440E; }
     @media (prefers-color-scheme: dark) { .portrait { border-color: #ff8534; } }
     @media (max-width: 600px) { .hero { gap: 0.9rem; } .portrait { flex-basis: 96px; width: 96px; height: 130px; border-width: 2px; } }
+    .hero-line { margin: 0 0 0.5rem; line-height: 1.5; }
+    .hero-notes { margin-top: 1.5rem; }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <img class="portrait" src="portrait.jpg" alt="Portrait of Thanh-Phong Lam" width="200" height="260">
-    <div class="hero-text">    <h1 class="header-title">Thanh-Phong Lam</h1>
-    <p class="header-subtitle">Applied AI Engineer, Ho Chi Minh City. 38 published or accepted peer-reviewed publications.</p>
-    <div class="header-links">
+  <header>
+    <div class="hero">
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Thanh-Phong Lam" width="200" height="260">
+      <div class="hero-text">
+        <h1 class="header-title">Thanh-Phong Lam</h1>
+        <p class="header-subtitle">Applied AI Engineer, Ho Chi Minh City.</p>
+        <p class="hero-line"><strong>Interests:</strong> RAG, applied AI/SI, Education Technology (EdTech).</p>
+        <p class="hero-line"><strong>Hobbies:</strong> running, jogging, swimming; book-aholic; full-on tech nerd, Ubuntu user since 2006.</p>
+        <div class="header-links">
       <a href="https://orcid.org/0009-0001-7790-5671">ORCID 0009-0001-7790-5671</a>
       <a href="https://github.com/limpaulfin">GitHub: limpaulfin</a>
       <a href="mailto:phongbayesian.phd@gmail.com">phongbayesian.phd@gmail.com</a>
       <a href="mailto:phonglt.0129@ueh.edu.vn">phonglt.0129@ueh.edu.vn (UEH)</a>
     </div>
+      </div>
+    </div>
+    <div class="hero-notes">
     <p class="scope-statement">Thirty-eight items below are published or accepted. Work still under review is not listed.</p>
     <p class="doi-note">Verified author identifier: <a class="doi" href="https://orcid.org/0009-0001-7790-5671">https://orcid.org/0009-0001-7790-5671</a>
     A DOI link is printed for every item that has a registered DOI. Items without one are not yet deposited by their publisher.</p>
     <p class="research-themes"><strong>Research themes:</strong> retrieval-augmented generation, multi-agent LLM systems, Model Context Protocol safe computation, Bayesian inference, causal and uplift analytics, fuzzy MCDM, stochastic stability.</p>
-    <p class="research-themes"><strong>Hobbies:</strong> running, jogging and swimming; a book-aholic; a full-on tech nerd and Ubuntu user since 2006.</p>
     </div>
   </header>
 
