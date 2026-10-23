@@ -74,14 +74,17 @@
       ol, ul { margin-left: 1.25rem; }
       li { font-size: 0.95rem; }
     }
-    .portrait { display: block; width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: top; margin: 0 0 1rem; border: 3px solid #C1440E; }
+    .hero { display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; }
+    .hero-text { flex: 1 1 0; min-width: 0; }
+    .portrait { flex: 0 0 200px; width: 200px; height: 260px; border-radius: 12px; object-fit: cover; object-position: top; border: 3px solid #C1440E; }
     @media (prefers-color-scheme: dark) { .portrait { border-color: #ff8534; } }
+    @media (max-width: 600px) { .hero { gap: 0.9rem; } .portrait { flex-basis: 96px; width: 96px; height: 130px; border-width: 2px; } }
   </style>
 </head>
 <body>
-  <header>
-    <img class="portrait" src="portrait.jpg" alt="Portrait of Thanh-Phong Lam" width="160" height="160">
-    <h1 class="header-title">Thanh-Phong Lam</h1>
+  <header class="hero">
+    <img class="portrait" src="portrait.jpg" alt="Portrait of Thanh-Phong Lam" width="200" height="260">
+    <div class="hero-text">    <h1 class="header-title">Thanh-Phong Lam</h1>
     <p class="header-subtitle">Applied AI Engineer, Ho Chi Minh City. 38 published or accepted peer-reviewed publications.</p>
     <div class="header-links">
       <a href="https://orcid.org/0009-0001-7790-5671">ORCID 0009-0001-7790-5671</a>
@@ -93,6 +96,7 @@
     <p class="doi-note">Verified author identifier: <a class="doi" href="https://orcid.org/0009-0001-7790-5671">https://orcid.org/0009-0001-7790-5671</a>
     A DOI link is printed for every item that has a registered DOI. Items without one are not yet deposited by their publisher.</p>
     <p class="research-themes"><strong>Research themes:</strong> retrieval-augmented generation, multi-agent LLM systems, Model Context Protocol safe computation, Bayesian inference, causal and uplift analytics, fuzzy MCDM, stochastic stability.</p>
+    </div>
   </header>
 
   <main>
