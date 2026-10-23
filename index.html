@@ -84,6 +84,10 @@
     .hero .header-links { display: flex; flex-direction: column; gap: 0.15rem; margin-top: 0.4rem; font-size: 0.9rem; }
     .hero .header-links a { margin: 0; }
     @media (max-width: 600px) { .portrait { flex-basis: 112px; width: 112px; height: 150px; } .hero .header-links { font-size: 0.8rem; } .hero-line { font-size: 0.9rem; } }
+    .hero { align-items: stretch; }
+    .portrait { align-self: stretch; height: auto; min-height: 150px; }
+    .hero-notes .header-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.9rem; margin: 0 0 1rem; }
+    @media (max-width: 600px) { .portrait { flex-basis: 120px; width: 120px; height: auto; } .hero-notes .header-links { font-size: 0.82rem; gap: 0.2rem 0.9rem; } }
   </style>
 </head>
 <body>
@@ -95,15 +99,15 @@
         <p class="header-subtitle">Applied AI Engineer, Ho Chi Minh City.</p>
         <p class="hero-line"><strong>Interests:</strong> RAG, applied AI/SI, modern applied math for AI, EdTech, optimization in education and applications.</p>
         <p class="hero-line"><strong>Hobbies:</strong> running, jogging, swimming; book-aholic; full-on tech nerd, Ubuntu user since 2006.</p>
+      </div>
+    </div>
+    <div class="hero-notes">
         <div class="header-links">
       <a href="https://orcid.org/0009-0001-7790-5671">ORCID 0009-0001-7790-5671</a>
       <a href="https://github.com/limpaulfin">GitHub: limpaulfin</a>
       <a href="mailto:phongbayesian.phd@gmail.com">phongbayesian.phd@gmail.com</a>
       <a href="mailto:phonglt.0129@ueh.edu.vn">phonglt.0129@ueh.edu.vn (UEH)</a>
     </div>
-      </div>
-    </div>
-    <div class="hero-notes">
     <p class="scope-statement">Thirty-eight items below are published or accepted. Work still under review is not listed.</p>
     <p class="doi-note">Verified author identifier: <a class="doi" href="https://orcid.org/0009-0001-7790-5671">https://orcid.org/0009-0001-7790-5671</a>
     A DOI link is printed for every item that has a registered DOI. Items without one are not yet deposited by their publisher.</p>
