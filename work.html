@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Build and Why - Thanh-Phong Lam</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+    header { border-bottom: 2px solid #F37021; padding-bottom: 2rem; margin-bottom: 2rem; }
+    .header-title { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+    .header-subtitle { font-size: 1rem; font-weight: 400; color: #666; margin-bottom: 1rem; }
+    .header-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .header-links a { color: #C1440E; text-decoration: none; border-bottom: 1px solid transparent; }
+    .header-links a:hover { border-bottom: 1px solid #C1440E; }
+    .scope-statement { font-size: 0.95rem; color: #555; margin-bottom: 1rem; font-style: italic; }
+    .research-themes { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+    main { display: flex; flex-direction: column; gap: 2.5rem; }
+    section { display: flex; flex-direction: column; gap: 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; color: #C1440E; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+    ol, ul { list-style-position: outside; margin-left: 1.5rem; }
+    li { margin-bottom: 1.5rem; line-height: 1.7; }
+    .badge {
+      display: inline-block; background-color: #C1440E; color: #ffffff;
+      font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.65rem;
+      border-radius: 12px; margin-top: 0.5rem;
+    }
+.doi { display: block; margin-top: 0.35rem; font-size: 0.85rem; color: #C1440E; text-decoration: none; word-break: break-all; }
+    .doi:hover { text-decoration: underline; }
+    .doi-note { font-size: 0.85rem; color: #555; margin-top: 0.75rem; }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+    footer {
+      border-top: 1px solid #e0e0e0; padding-top: 2rem; margin-top: 3rem;
+      font-size: 0.9rem; color: #666; text-align: center;
+    }
+    footer a { color: #F37021; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Dark palette LAST: an equal-specificity rule declared later wins,
+       so these overrides must sit after every light-mode declaration. */
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background-color: #121212; }
+      a { color: #ffb37a; }
+      a:visited { color: #ffb37a; }
+      .header-title { color: #ffffff; }
+      .header-subtitle { color: #c9c9c9; }
+      .header-links a { color: #ffb37a; }
+      .header-links a:hover { border-bottom-color: #ffb37a; }
+      .scope-statement { color: #b5b5b5; }
+      .research-themes { color: #c9c9c9; }
+      h2 { color: #ff9247; border-bottom-color: #3a3a3a; }
+      .badge { background-color: #ff8534; color: #1a1a1a; }
+      footer { border-top-color: #3a3a3a; color: #c9c9c9; }
+      footer a { color: #ffb37a; }
+      .doi { color: #ffb37a; }
+      .doi-note { color: #b5b5b5; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .header-title { font-size: 1.5rem; }
+      .header-subtitle { font-size: 0.9rem; }
+      .header-links { font-size: 0.85rem; gap: 0.75rem; }
+      h2 { font-size: 1.2rem; }
+      ol, ul { margin-left: 1.25rem; }
+      li { font-size: 0.95rem; }
+    }
+    .hero { display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; }
+    .hero-text { flex: 1 1 0; min-width: 0; }
+    .portrait { flex: 0 0 200px; width: 200px; height: 260px; border-radius: 12px; object-fit: cover; object-position: top; border: 3px solid #C1440E; }
+    @media (prefers-color-scheme: dark) { .portrait { border-color: #ff8534; } }
+    @media (max-width: 600px) { .hero { gap: 0.9rem; } .portrait { flex-basis: 96px; width: 96px; height: 130px; border-width: 2px; } }
+    .hero-line { margin: 0 0 0.5rem; line-height: 1.5; }
+    .hero-notes { margin-top: 1.5rem; }
+    .hero .header-links { display: flex; flex-direction: column; gap: 0.15rem; margin-top: 0.4rem; font-size: 0.9rem; }
+    .hero .header-links a { margin: 0; }
+    @media (max-width: 600px) { .portrait { flex-basis: 112px; width: 112px; height: 150px; } .hero .header-links { font-size: 0.8rem; } .hero-line { font-size: 0.9rem; } }
+    .hero { align-items: stretch; }
+    .portrait { align-self: stretch; height: auto; min-height: 150px; }
+    .hero-notes .header-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.9rem; margin: 0 0 1rem; }
+    @media (max-width: 600px) { .portrait { flex-basis: 120px; width: 120px; height: auto; } .hero-notes .header-links { font-size: 0.82rem; gap: 0.2rem 0.9rem; } }
+
+    .beat { margin: 0 0 2rem; }
+    .beat h2 { margin-bottom: 0.4rem; }
+    .beat p, .beat li { font-size: 1.15rem; line-height: 1.7; margin-bottom: 0.8rem; }
+    .beat ol { margin-left: 1.5rem; }
+    .back { display: inline-block; margin: 0 0 1.5rem; font-size: 0.95rem; }
+    .step { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <a class="back" href="./">&larr; Publications</a>
+  <h1 class="header-title">What I build, and why</h1>
+  <p class="header-subtitle">AI you can check. In plain words.</p>
+
+  <section class="beat" id="problem">
+    <h2>The problem</h2>
+    <p>AI talks well. It does not always tell the truth.</p>
+    <p>Ask it to add up a bank's numbers, and it guesses. Ask it about your documents, and it may invent an answer. It sounds sure either way.</p>
+  </section>
+
+  <section class="beat" id="impact">
+    <h2>What that costs</h2>
+    <p>People stop trusting it, or they trust it too much. Both are expensive.</p>
+    <p>A student gets an answer and learns nothing. A banker gets a number and cannot check it. A wrong number you believe is worse than no number.</p>
+  </section>
+
+  <section class="beat" id="solution">
+    <h2>My answer</h2>
+    <p>Three simple rules.</p>
+    <ol>
+      <li><strong>Make it read the right sources.</strong> Retrieval (RAG) gives the model real documents to answer from. I built this for tutoring (EduMSRA) and for questions that need several hops of reasoning (AgenticGraph-RAG).</li>
+      <li><strong>Never let it do the math.</strong> A small, exact calculator does the numbers. The model only decides what to ask. This is the idea behind my accounting and audit benchmark, "Computation, Not Recall".</li>
+      <li><strong>Say how sure you are.</strong> Bayesian methods give a range of belief, not a fake yes or no. I use them for bank credit risk, bank stability, and marketing decisions.</li>
+    </ol>
+    <p>Under the hood is applied math: fuzzy decision methods, stochastic stability, causal and uplift analysis. In education, the same thinking shapes studies on prompt quality, digital divides, and knowledge tracing for students.</p>
+  </section>
+
+  <section class="beat" id="conclusion">
+    <h2>The takeaway</h2>
+    <p>Good AI shows its sources, does its math with a calculator, and admits what it does not know.</p>
+    <p class="step">One small step: pick one decision you make every week. Ask three questions. Where did this come from? Who did the math? How sure are we?</p>
+  </section>
+
+  <section class="beat" id="adversarial">
+    <h2>Where this can fail</h2>
+    <p>Retrieval is only as good as its sources. If the source is wrong, the answer is wrong, and it will still sound sure. That is a boundary of the first rule.</p>
+    <p>The calculator adds time, and the model can still ask it the wrong question. That is a failure case of the second rule.</p>
+    <p>A Bayesian range depends on the starting belief you choose. Pick a bad one, and the range misleads. That is a failure case of the third.</p>
+    <p>What would prove me wrong: on fresh problems the model has never seen, a model with the calculator does no better than one without. My benchmark is built to run exactly that test.</p>
+  </section>
+
+  <footer>
+    <p><a href="./">Full list of publications</a> &middot; <a href="https://orcid.org/0009-0001-7790-5671">ORCID</a> &middot; <a href="https://github.com/limpaulfin">GitHub</a></p>
+  </footer>
+</body>
+</html>
