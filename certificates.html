@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificates - Thanh-Phong Lam</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+    header { border-bottom: 2px solid #F37021; padding-bottom: 2rem; margin-bottom: 2rem; }
+    .header-title { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+    .header-subtitle { font-size: 1rem; font-weight: 400; color: #666; margin-bottom: 1rem; }
+    .header-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .header-links a { color: #C1440E; text-decoration: none; border-bottom: 1px solid transparent; }
+    .header-links a:hover { border-bottom: 1px solid #C1440E; }
+    .scope-statement { font-size: 0.95rem; color: #555; margin-bottom: 1rem; font-style: italic; }
+    .research-themes { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+    main { display: flex; flex-direction: column; gap: 2.5rem; }
+    section { display: flex; flex-direction: column; gap: 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; color: #C1440E; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+    ol, ul { list-style-position: outside; margin-left: 1.5rem; }
+    li { margin-bottom: 1.5rem; line-height: 1.7; }
+    .badge {
+      display: inline-block; background-color: #C1440E; color: #ffffff;
+      font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.65rem;
+      border-radius: 12px; margin-top: 0.5rem;
+    }
+.doi { display: block; margin-top: 0.35rem; font-size: 0.85rem; color: #C1440E; text-decoration: none; word-break: break-all; }
+    .doi:hover { text-decoration: underline; }
+    .doi-note { font-size: 0.85rem; color: #555; margin-top: 0.75rem; }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+    footer {
+      border-top: 1px solid #e0e0e0; padding-top: 2rem; margin-top: 3rem;
+      font-size: 0.9rem; color: #666; text-align: center;
+    }
+    footer a { color: #F37021; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Dark palette LAST: an equal-specificity rule declared later wins,
+       so these overrides must sit after every light-mode declaration. */
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background-color: #121212; }
+      a { color: #ffb37a; }
+      a:visited { color: #ffb37a; }
+      .header-title { color: #ffffff; }
+      .header-subtitle { color: #c9c9c9; }
+      .header-links a { color: #ffb37a; }
+      .header-links a:hover { border-bottom-color: #ffb37a; }
+      .scope-statement { color: #b5b5b5; }
+      .research-themes { color: #c9c9c9; }
+      h2 { color: #ff9247; border-bottom-color: #3a3a3a; }
+      .badge { background-color: #ff8534; color: #1a1a1a; }
+      footer { border-top-color: #3a3a3a; color: #c9c9c9; }
+      footer a { color: #ffb37a; }
+      .doi { color: #ffb37a; }
+      .doi-note { color: #b5b5b5; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .header-title { font-size: 1.5rem; }
+      .header-subtitle { font-size: 0.9rem; }
+      .header-links { font-size: 0.85rem; gap: 0.75rem; }
+      h2 { font-size: 1.2rem; }
+      ol, ul { margin-left: 1.25rem; }
+      li { font-size: 0.95rem; }
+    }
+    .hero { display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; }
+    .hero-text { flex: 1 1 0; min-width: 0; }
+    .portrait { flex: 0 0 200px; width: 200px; height: 260px; border-radius: 12px; object-fit: cover; object-position: top; border: 3px solid #C1440E; }
+    @media (prefers-color-scheme: dark) { .portrait { border-color: #ff8534; } }
+    @media (max-width: 600px) { .hero { gap: 0.9rem; } .portrait { flex-basis: 96px; width: 96px; height: 130px; border-width: 2px; } }
+    .hero-line { margin: 0 0 0.5rem; line-height: 1.5; }
+    .hero-notes { margin-top: 1.5rem; }
+    .hero .header-links { display: flex; flex-direction: column; gap: 0.15rem; margin-top: 0.4rem; font-size: 0.9rem; }
+    .hero .header-links a { margin: 0; }
+    @media (max-width: 600px) { .portrait { flex-basis: 112px; width: 112px; height: 150px; } .hero .header-links { font-size: 0.8rem; } .hero-line { font-size: 0.9rem; } }
+    .hero { align-items: stretch; }
+    .portrait { align-self: stretch; height: auto; min-height: 150px; }
+    .hero-notes .header-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.9rem; margin: 0 0 1rem; }
+    @media (max-width: 600px) { .portrait { flex-basis: 120px; width: 120px; height: auto; } .hero-notes .header-links { font-size: 0.82rem; gap: 0.2rem 0.9rem; } }
+    .badge { margin-right: 0.4rem; }
+  .cert { display: flex; gap: 1.2rem; align-items: flex-start; margin: 0 0 2rem; }
+    .cert img { width: 260px; max-width: 42%; border-radius: 8px; border: 1px solid #e0e0e0; flex: none; }
+    .cert h2 { margin: 0 0 0.4rem; font-size: 1.15rem; border: 0; padding: 0; }
+    .cert p { margin: 0 0 0.5rem; line-height: 1.55; }
+    .back { display: inline-block; margin: 0 0 1.5rem; font-size: 0.95rem; }
+    @media (max-width: 600px) { .cert { flex-direction: column; } .cert img { width: 100%; max-width: 100%; } }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style id="qr-css">.qr-share{display:flex;align-items:center;gap:.8rem;margin:1.2rem 0 0;font-size:.8rem;color:#666}.qr-share svg{width:88px;height:88px;flex:none;border-radius:6px;background:#fff;padding:4px}@media (prefers-color-scheme:dark){.qr-share{color:#c9c9c9}}</style>
+</head>
+<body>
+  <a class="back" href="./" target="_blank" rel="noopener noreferrer">&larr; Publications</a>
+  <h1 class="header-title">Certificates</h1>
+  <p class="header-subtitle">Awards and conference certificates.</p>
+  <section class="cert">
+    <a href="certificates/2026-09-18-bdp6-best-paper-award-lam-thanh-phong-computation-not-recall.jpg" target="_blank" rel="noopener noreferrer"><img src="certificates/2026-09-18-bdp6-best-paper-award-lam-thanh-phong-computation-not-recall-thumb.jpg" alt="Best Paper Award certificate, BDP-6 2026" loading="lazy"></a>
+    <div><h2>Best Paper Award</h2><p><span class="badge">Best Paper Award</span></p><p>"Computation, Not Recall: A Contamination-Resistant Benchmark for Tool-Augmented Language Models in Digital Accounting and Audit"</p><p>Business Based on Digital Platform International Conference 2026 (BDP-6), University of Finance - Marketing.</p><p>Authors: Thanh-Phong Lam, Hoai-Duc Nguyen.</p></div>
+  </section>
+  <section class="cert">
+    <a href="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-bayesian-quantile-privacy-banking.jpg" target="_blank" rel="noopener noreferrer"><img src="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-bayesian-quantile-privacy-banking-thumb.jpg" alt="ECONVN 2026/27 certificate of attendance, privacy paper" loading="lazy"></a>
+    <div><h2>Certificate of Attendance, and Best Paper Second Place</h2><p><span class="badge">Best Paper Award, Second Place</span></p><p>"Who Really Cares About Privacy? A Bayesian Quantile Regression of Privacy Risk Effects on Digital Banking Adoption Intention in Vietnam"</p><p>ECONVN 2026/2027, Ho Chi Minh City, 12-14 October 2026.</p><p>Authors: Thanh-Ha Doan, Viet-Tam Tran, Thanh-Phong Lam.</p></div>
+  </section>
+  <section class="cert">
+    <a href="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-causal-promo-sparse-ecommerce.jpg" target="_blank" rel="noopener noreferrer"><img src="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-causal-promo-sparse-ecommerce-thumb.jpg" alt="ECONVN 2026/27 certificate of attendance, causal inference paper" loading="lazy"></a>
+    <div><h2>Certificate of Attendance</h2><p>"Causal Inference for Promotional Campaign Effects in E-Commerce with Extreme Sparsity: A Multi-Method Comparison"</p><p>ECONVN 2026/2027, Ho Chi Minh City, 12-14 October 2026.</p><p>Authors: Anh-Vu Huynh-Nguyen, Viet-Tam Tran, Thanh-Phong Lam.</p></div>
+  </section>
+  <section class="cert">
+    <a href="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-bayesian-lstm-chaos-vn30.jpg" target="_blank" rel="noopener noreferrer"><img src="certificates/2026-10-12-econvn2026-27-certificate-of-attendance-lam-thanh-phong-bayesian-lstm-chaos-vn30-thumb.jpg" alt="ECONVN 2026/27 certificate of attendance, chaotic phase transitions paper" loading="lazy"></a>
+    <div><h2>Certificate of Attendance</h2><p>"Detecting Chaotic Phase Transitions in Financial Time Series: A Bayesian Evaluation Framework for LSTM Models on High-Frequency VN30 Data"</p><p>ECONVN 2026/2027, Ho Chi Minh City, 12-14 October 2026.</p><p>Authors: Huyen-Tram Dinh, Thanh-Phong Lam.</p></div>
+  </section>
+  <div class="qr-share"><svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" class="segno"><g transform="scale(4)"><path fill="#fff" d="M0 0h35v35h-35z"/><path class="qrline" stroke="#1a1a1a" d="M1 1.5h7m6 0h2m1 0h1m2 0h5m2 0h7m-33 1h1m5 0h1m3 0h1m2 0h4m3 0h1m5 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m4 0h1m2 0h1m4 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h1m1 0h1m2 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m5 0h1m3 0h5m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m6 0h1m5 0h2m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h3m4 0h1m2 0h1m1 0h3m-23 1h1m1 0h5m3 0h1m2 0h3m1 0h1m4 0h1m1 0h1m1 0h5m-31 1h3m2 0h1m2 0h1m1 0h3m1 0h1m3 0h4m1 0h1m2 0h2m1 0h2m1 0h1m-33 1h2m2 0h3m1 0h2m5 0h4m1 0h3m1 0h3m1 0h1m1 0h2m-32 1h2m1 0h2m2 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h3m2 0h3m1 0h3m-31 1h1m5 0h2m1 0h1m1 0h1m5 0h2m1 0h1m1 0h1m1 0h2m1 0h3m1 0h2m-32 1h2m2 0h1m1 0h1m1 0h1m1 0h2m1 0h2m1 0h4m2 0h1m2 0h1m4 0h2m-32 1h2m1 0h1m1 0h1m2 0h3m1 0h3m2 0h1m1 0h3m2 0h2m2 0h3m-32 1h2m3 0h1m2 0h1m3 0h1m1 0h3m1 0h1m2 0h1m1 0h8m-29 1h1m1 0h1m1 0h1m1 0h2m2 0h2m3 0h1m4 0h1m2 0h1m1 0h2m3 0h1m-30 1h2m4 0h1m2 0h2m2 0h2m1 0h2m2 0h1m2 0h2m1 0h2m1 0h1m-30 1h4m1 0h2m2 0h6m3 0h1m3 0h4m1 0h2m-31 1h2m2 0h1m1 0h4m1 0h1m1 0h2m2 0h5m3 0h5m1 0h1m-32 1h1m4 0h1m1 0h2m1 0h1m1 0h1m3 0h1m1 0h1m2 0h4m1 0h3m-30 1h1m2 0h3m1 0h1m1 0h5m2 0h1m1 0h4m1 0h1m1 0h2m3 0h1m1 0h1m-33 1h1m2 0h2m1 0h5m1 0h1m2 0h2m3 0h1m1 0h1m2 0h3m1 0h1m1 0h1m-32 1h1m2 0h2m2 0h1m2 0h2m2 0h3m2 0h1m1 0h1m1 0h1m5 0h4m-33 1h1m1 0h1m1 0h1m1 0h2m3 0h1m2 0h1m2 0h1m4 0h7m3 0h1m-25 1h1m2 0h3m2 0h4m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m-33 1h7m2 0h2m1 0h2m1 0h1m2 0h1m3 0h3m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h4m1 0h2m3 0h4m-32 1h1m1 0h3m1 0h1m1 0h1m2 0h3m3 0h1m1 0h1m2 0h1m1 0h6m1 0h1m-32 1h1m1 0h3m1 0h1m1 0h3m2 0h2m1 0h1m2 0h2m2 0h3m2 0h1m1 0h3m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h5m1 0h2m1 0h2m4 0h2m1 0h2m-31 1h1m5 0h1m4 0h2m2 0h2m1 0h1m2 0h2m5 0h3m-31 1h7m1 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h4m1 0h1m1 0h1"/></g></svg><span>Scan to open or share this page<br>https://limpaulfin.github.io/publications/certificates.html</span></div>
+</body>
+</html>
