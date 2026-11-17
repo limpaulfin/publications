@@ -27,6 +27,21 @@ a{color:var(--acc)}
 .pg{display:flex;align-items:center;gap:8px;margin-top:12px;color:var(--mut)}
 .note{color:var(--mut);font-size:.85rem;margin-top:20px}
 @media (max-width:600px){th.a,td.a{display:none}}
+
+    .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.75rem 0; margin-bottom: 1.5rem; border-bottom: 2px solid #F37021; }
+    .site-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
+    .site-nav a:hover { color: #F37021; }
+    .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
+  
+.item{padding:12px 2px;border-bottom:1px solid var(--line)}
+.it-title{font-weight:650;font-size:1.05rem;line-height:1.4}
+.it-title .k{vertical-align:2px}
+.it-f{display:flex;gap:.6rem;margin:.18rem 0;font-size:.95rem}
+.it-k{flex:0 0 4.6rem;color:var(--mut);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding-top:.18rem}
+.untitled{color:var(--mut);font-style:italic}
+.site-nav a{color:var(--fg)}
+.site-nav a.active{color:var(--acc);border-bottom-color:var(--acc)}
+.site-nav a:hover{color:var(--acc)}
 </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -35,6 +50,13 @@ a{color:var(--acc)}
   <style id="qr-css">.qr-share{display:flex;align-items:center;gap:.8rem;margin:1.2rem 0 0;font-size:.8rem;color:#666}.qr-share svg{width:88px;height:88px;flex:none;border-radius:6px;background:#fff;padding:4px}@media (prefers-color-scheme:dark){.qr-share{color:#c9c9c9}}</style>
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="index.html">Publications</a>
+    <a href="work.html">What I build, and why</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="blog.html">Blog</a>
+    <a href="library.html" class="active" aria-current="page">My Library</a>
+  </nav>
 <main>
 <h1>My Library</h1>
 <p class="sub" id="sub">Loading...</p>
@@ -42,7 +64,7 @@ a{color:var(--acc)}
 <input id="q" type="search" placeholder="Search title, author, year, DOI" aria-label="Search">
 <select id="k" aria-label="Kind"><option value="">Books and papers</option><option value="b">Books</option><option value="p">Papers</option></select>
 </div>
-<table><thead><tr><th>Title</th><th class="a">Author</th><th>Year</th><th>DOI / ISBN</th></tr></thead><tbody id="rows"></tbody></table>
+<div id="rows"></div>
 <div class="pg"><button id="prev">Prev</button><span id="pos"></span><button id="next">Next</button></div>
 <p class="note">What I have and what I read. A year shown with "~" is guessed from the file name and may be wrong; DOIs are verified against Crossref. Titles of the books and papers only, no files are shared.</p>
 </main>
@@ -51,19 +73,33 @@ a{color:var(--acc)}
 var data=[],view=[],page=0,N=100;
 var $=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function cleanTitle(t){
+ var s=String(t||'').trim();
+ if(s.length>1&&s.charAt(0)==='"'&&s.charAt(s.length-1)==='"')s=s.slice(1,-1).trim();
+ if(/\.(djvu|pdf|epub|mobi|azw3?|chm|txt|docx?)$/i.test(s)){s=s.replace(/\.[a-z0-9]+$/i,'').replace(/_/g,' ')}
+ s=s.replace(/^[^A-Za-z0-9\u00C0-\u024F\u1E00-\u1EFF]+/,'').replace(/"\.\s*In:/,'. In:').replace(/\s+/g,' ').trim();
+ if(/^[A-Za-z0-9_-]{6,}$/.test(s)&&/\d/.test(s)&&/[a-z]/.test(s)&&/[A-Z]/.test(s))return'';
+ return s}
 function link(d){if(!d)return'';if(d.indexOf('https://doi.org/')===0)return'<a href="'+esc(d)+'" target="_blank" rel="noopener noreferrer">'+esc(d.slice(16))+'</a>';return esc(d)}
 function render(){
  var s=page*N,e=Math.min(s+N,view.length);var h='';
  for(var i=s;i<e;i++){var r=view[i];
-  h+='<tr><td><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'+esc(r.t)+'</td><td class="a">'+esc(r.a)+'</td><td class="y">'+(r.y?(r.q?'~':'')+esc(r.y):'')+'</td><td>'+link(r.d)+'</td></tr>'}
- $('rows').innerHTML=h||'<tr><td colspan="4">No match.</td></tr>';
+  h+='<div class="item"><div class="it-title"><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'
+    +(r._ct?esc(r._ct):'<span class="untitled">Untitled</span>')+'</div>';
+  if(r.a)h+='<div class="it-f"><span class="it-k">Author</span><span>'+esc(r.a)+'</span></div>';
+  if(r.y)h+='<div class="it-f"><span class="it-k">Year</span><span>'+(r.q?'~':'')+esc(r.y)+'</span></div>';
+  if(r.d)h+='<div class="it-f"><span class="it-k">'+(r.d.indexOf('https://doi.org/')===0?'DOI':'ID')+'</span><span>'+link(r.d)+'</span></div>';
+  h+='</div>'}
+ $('rows').innerHTML=h||'<p>No match.</p>';
  $('pos').textContent=view.length?(s+1)+'-'+e+' of '+view.length:'0';
  $('prev').disabled=page===0;$('next').disabled=e>=view.length}
 function filter(){
  var q=$('q').value.trim().toLowerCase(),k=$('k').value;
- view=data.filter(function(r){return(!k||r.k===k)&&(!q||(r.t+' '+r.a+' '+r.y+' '+r.d).toLowerCase().indexOf(q)>=0)});
+ view=data.filter(function(r){return(!k||r.k===k)&&(!q||(r._ct+' '+r.a+' '+r.y+' '+r.d).toLowerCase().indexOf(q)>=0)});
  page=0;render()}
 fetch('library.json').then(function(r){return r.json()}).then(function(d){
+ d.forEach(function(r){r._ct=cleanTitle(r.t)});
+ d.sort(function(x,y){var a=x._ct.toLowerCase(),b=y._ct.toLowerCase();if(!a)return 1;if(!b)return -1;return a<b?-1:a>b?1:0});
  data=d;var b=d.filter(function(r){return r.k==='b'}).length;
  $('sub').textContent=b.toLocaleString('en')+' books and '+(d.length-b).toLocaleString('en')+' papers';
  filter()}).catch(function(){$('sub').textContent='Could not load library.json'});

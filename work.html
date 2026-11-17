@@ -95,6 +95,11 @@
     .beat ol { margin-left: 1.5rem; }
     .back { display: inline-block; margin: 0 0 1.5rem; font-size: 0.95rem; }
     .step { font-weight: 700; }
+  
+    .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.75rem 0; margin-bottom: 1.5rem; border-bottom: 2px solid #F37021; }
+    .site-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
+    .site-nav a:hover { color: #F37021; }
+    .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -103,6 +108,13 @@
   <style id="qr-css">.qr-share{display:flex;align-items:center;gap:.8rem;margin:1.2rem 0 0;font-size:.8rem;color:#666}.qr-share svg{width:88px;height:88px;flex:none;border-radius:6px;background:#fff;padding:4px}@media (prefers-color-scheme:dark){.qr-share{color:#c9c9c9}}</style>
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="index.html">Publications</a>
+    <a href="work.html" class="active" aria-current="page">What I build, and why</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="blog.html">Blog</a>
+    <a href="library.html">My Library</a>
+  </nav>
   <a class="back" href="./" target="_blank" rel="noopener noreferrer">&larr; Publications</a>
   <h1 class="header-title">What I build, and why</h1>
   <p class="header-subtitle">AI you can check.</p>

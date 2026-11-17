@@ -89,6 +89,19 @@
     .hero-notes .header-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.9rem; margin: 0 0 1rem; }
     @media (max-width: 600px) { .portrait { flex-basis: 120px; width: 120px; height: auto; } .hero-notes .header-links { font-size: 0.82rem; gap: 0.2rem 0.9rem; } }
     .badge { margin-right: 0.4rem; }
+  
+    .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.75rem 0; margin-bottom: 1.5rem; border-bottom: 2px solid #F37021; }
+    .site-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
+    .site-nav a:hover { color: #F37021; }
+    .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
+
+    .pub-list li { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #e5e5e5; }
+    .pub-title { font-size: 1.12rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.4rem; }
+    .pub-field { display: flex; gap: 0.75rem; margin: 0.15rem 0; }
+    .pub-k { flex: 0 0 5.4rem; color: #666; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 0.2rem; }
+    .pub-v { flex: 1; }
+    .pub-meta { margin-top: 0.45rem; }
+    .pub-note { color: #666; font-size: 0.92rem; }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -97,6 +110,13 @@
   <style id="qr-css">.qr-share{display:flex;align-items:center;gap:.8rem;margin:1.2rem 0 0;font-size:.8rem;color:#666}.qr-share svg{width:88px;height:88px;flex:none;border-radius:6px;background:#fff;padding:4px}@media (prefers-color-scheme:dark){.qr-share{color:#c9c9c9}}</style>
 </head>
 <body>
+  <nav class="site-nav">
+    <a href="index.html" class="active" aria-current="page">Publications</a>
+    <a href="work.html">What I build, and why</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="blog.html">Blog</a>
+    <a href="library.html">My Library</a>
+  </nav>
   <header>
     <div class="hero">
       <img class="portrait" src="portrait.jpg" alt="Portrait of Thanh-Phong Lam" width="200" height="260">
@@ -108,7 +128,7 @@
       </div>
     </div>
     <div class="hero-notes">
-      <p class="hero-line"><strong>Awards:</strong> Best Paper, SCI-2026; Best Paper, BDP-6 2026; Best Paper, Second Place, ECONVN 2026/27. <a href="certificates.html" target="_blank" rel="noopener noreferrer">Certificates &rarr;</a> &nbsp; <a href="work.html" target="_blank" rel="noopener noreferrer">What I build, and why &rarr;</a> &nbsp; <a href="blog.html" target="_blank" rel="noopener noreferrer">Blog &rarr;</a> &nbsp; <a href="library.html" target="_blank" rel="noopener noreferrer">My Library &rarr;</a></p>
+      <p class="hero-line"><strong>Awards:</strong> Best Paper, SCI-2026; Best Paper, BDP-6 2026; Best Paper, Second Place, ECONVN 2026/27.</p>
         <div class="header-links">
       <a href="https://orcid.org/0009-0001-7790-5671" target="_blank" rel="noopener noreferrer">ORCID 0009-0001-7790-5671</a>
       <a href="https://github.com/limpaulfin" target="_blank" rel="noopener noreferrer">GitHub: limpaulfin</a>
@@ -126,173 +146,289 @@
     <section id="journals">
       <h2>Journal Articles (10)</h2>
       <ol>
-        <li>
-          Ho, T.-L., Pham, H., Hoang, Q. D., Duong Thi Binh, A., <strong>Lam, T.-P.</strong>, Ngo, D.-T., Nguyen, T. T. "Discovering Session-Level Demand Patterns for Reinforcement Learning-based Dynamic Inventory Allocation in Live-Streaming E-Commerce." <em>Knowledge and Information Systems</em> (Springer), 2026.
-          <a class="doi" href="https://doi.org/10.1007/s10115-026-02895-y" target="_blank" rel="noopener noreferrer">doi.org/10.1007/s10115-026-02895-y</a>
-          <div class="badge">Q1, Springer</div>
-        </li>
-        <li>
-          Ho, T.-L., <strong>Lam, T.-P.</strong> "EduMSRA: A Multi-Source Educational Research Agent Integrating Retrieval-Augmented Generation and Model Context Protocol for Adaptive Intelligent Tutoring Systems." <em>Applied Sciences</em> (MDPI), 16(9), 4400, 2026.
-          <a class="doi" href="https://doi.org/10.3390/app16094400" target="_blank" rel="noopener noreferrer">doi.org/10.3390/app16094400</a>
-          <div class="badge">Q2 SCIE / Scopus</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Ho, T.-L., Nguyen, H.-D. "Event-Triggered Stabilization of Positive Takagi-Sugeno Fuzzy Systems under Lévy Noise via Linear Programming." <em>International Journal of Innovative Computing, Information and Control</em> (IJICIC), 22(6), 1539-1552, 2026.
-          <a class="doi" href="https://doi.org/10.24507/ijicic.22.06.1539" target="_blank" rel="noopener noreferrer">doi.org/10.24507/ijicic.22.06.1539</a>
-          <div class="badge">Published</div>
-          <div class="badge">Scopus Q3</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong> "Bayesian ESG-Credit-Risk Assessment of Vietnamese Commercial Banks." <em>TDMU Journal of Science</em>, 8(2), 2026.
-          <a class="doi" href="https://doi.org/10.37550/tdmu.EJS/2026.02.745" target="_blank" rel="noopener noreferrer">doi.org/10.37550/tdmu.EJS/2026.02.745</a>
-          <div class="badge">Published</div>
-        </li>
-        <li>
-          Bui-Nguyen, P.-D., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q. "Bayesian Supply-Chain Risk in Green Logistics: Evidence from Binh Duong." <em>TDMU Journal of Science</em>, 2026.
-          <div class="badge">Published</div>
-        </li>
-              <li>
-          Nguyen, H.-A.-V., Tran, V.-T., <strong>Lam, T.-P.</strong> "AI-Driven Customer Segmentation for Embedded Finance in E-Commerce: An HDBSCAN-RFM Approach for BNPL Credit Scoring." <em>Journal of Network Intelligence, 2026</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong> "Quantum-Resilient Differential Privacy via Finite-Field Randomisation for Vietnamese Banking Aggregates." <em>Asian Journal of Applied Financial Econometrics (AJAFE), 2026</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong> "Extending the A Priori Procedure to Heterogeneous Variances: A Welch–Satterthwaite Approach with US S&amp;P 500 ETF and Vietnamese VN30 Sectoral Evidence." <em>Asian Journal of Applied Financial Econometrics (AJAFE), 2026</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Nguyen, H.-D. "Benchmarking LLM Agents Orchestrating Mathematical Tools on the Vietnamese Stock Market." <em>Asian Journal of Economics and Banking (AJEB), Emerald, 2026</em>.
-          <div class="badge">Accepted</div>
-        </li>
-              <li>
-          <strong>Lam, T.-P.</strong>, Tran, T.-H.-N. "Income Diversification and Bank Stability in Vietnam: A System GMM and Bayesian Analysis." <em>Asian Journal of Economics and Banking (AJEB), Emerald, 2026</em>.
-          <div class="badge">Accepted</div>
-        </li>
+    <li class="pub">
+      <h3 class="pub-title">Discovering Session-Level Demand Patterns for Reinforcement Learning-based Dynamic Inventory Allocation in Live-Streaming E-Commerce</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Ho, T.-L., Pham, H., Hoang, Q. D., Duong Thi Binh, A., <strong>Lam, T.-P.</strong>, Ngo, D.-T., Nguyen, T. T.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Knowledge and Information Systems</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.1007/s10115-026-02895-y" target="_blank" rel="noopener noreferrer">doi.org/10.1007/s10115-026-02895-y</a> <div class="badge">Q1, Springer</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">EduMSRA: A Multi-Source Educational Research Agent Integrating Retrieval-Augmented Generation and Model Context Protocol for Adaptive Intelligent Tutoring Systems</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Ho, T.-L., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Applied Sciences</em>, 16(9), 4400</span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">MDPI</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.3390/app16094400" target="_blank" rel="noopener noreferrer">doi.org/10.3390/app16094400</a> <div class="badge">Q2 SCIE / Scopus</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Event-Triggered Stabilization of Positive Takagi-Sugeno Fuzzy Systems under Lévy Noise via Linear Programming</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Ho, T.-L., Nguyen, H.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>International Journal of Innovative Computing, Information and Control (IJICIC)</em>, 22(6), 1539-1552</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.24507/ijicic.22.06.1539" target="_blank" rel="noopener noreferrer">doi.org/10.24507/ijicic.22.06.1539</a> <div class="badge">Published</div> <div class="badge">Scopus Q3</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Bayesian ESG-Credit-Risk Assessment of Vietnamese Commercial Banks</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>TDMU Journal of Science</em>, 8(2)</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.37550/tdmu.EJS/2026.02.745" target="_blank" rel="noopener noreferrer">doi.org/10.37550/tdmu.EJS/2026.02.745</a> <div class="badge">Published</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Bayesian Supply-Chain Risk in Green Logistics: Evidence from Binh Duong</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Bui-Nguyen, P.-D., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>TDMU Journal of Science</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Published</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">AI-Driven Customer Segmentation for Embedded Finance in E-Commerce: An HDBSCAN-RFM Approach for BNPL Credit Scoring</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, H.-A.-V., Tran, V.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Journal of Network Intelligence</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Quantum-Resilient Differential Privacy via Finite-Field Randomisation for Vietnamese Banking Aggregates</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Asian Journal of Applied Financial Econometrics (AJAFE)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Extending the A Priori Procedure to Heterogeneous Variances: A Welch–Satterthwaite Approach with US S&amp;P 500 ETF and Vietnamese VN30 Sectoral Evidence</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Asian Journal of Applied Financial Econometrics (AJAFE)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Benchmarking LLM Agents Orchestrating Mathematical Tools on the Vietnamese Stock Market</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Nguyen, H.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Asian Journal of Economics and Banking (AJEB)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Emerald</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Income Diversification and Bank Stability in Vietnam: A System GMM and Bayesian Analysis</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Tran, T.-H.-N.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Asian Journal of Economics and Banking (AJEB)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Emerald</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
       </ol>
     </section>
 
     <section id="conferences">
       <h2>Conference Papers and Book Chapters (27)</h2>
       <ol>
-        <li>
-          <strong>Lam, T.-P.</strong>, Tran, V.-T., Nguyen, H.-A.-V. "AgenticGraph-RAG: Multi-Hop Question Answering via Graph-Augmented Retrieval and Adversarial Tool-Augmented Generation." <em>FICTA 2026</em>, Springer.
-          <div class="badge">Scopus</div>
-        </li>
-        <li>
-          Tran, V.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong>, Nguyen, S.-T. "RAG-Based Algorithmic Assurance for Greenwashing Detection." <em>SCI 2026, 8th International Conference on Smart Computing and Informatics</em>, Springer.
-          <div class="badge">Scopus / WoS</div>
-        </li>
-        <li>
-          Tran, V.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong>, Nguyen, S.-T. "AI-Powered Supply Chain Intelligence: Balancing Algorithmic Visibility and Compliance Risk in EV Battery Networks." <em>SCI 2026</em>, Springer.
-          <div class="badge">Best Paper Award</div>
-          <div class="badge">Scopus / WoS</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Ho, T.-L. "Bayesian Network Inference for Resolving Uncertainty in Financial Depth-Stability Links." <em>IUKM 2026</em>, Springer LNAI.
-          <a class="doi" href="https://doi.org/10.1007/978-981-92-5644-0_1" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-981-92-5644-0_1</a>
-          <div class="badge">Springer LNAI</div>
-        </li>
-        <li>
-          Nguyen, T.-N., et al., <strong>Lam, T.-P.</strong> "An Optimization Framework for Smart Warehouse Bin Assignment: Bayesian Optimization with APP Sample Planning and Gain-Probability Evaluation." <em>IUKM 2026</em>, Springer LNAI.
-          <a class="doi" href="https://doi.org/10.1007/978-981-92-5644-0_31" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-981-92-5644-0_31</a>
-          <div class="badge">Springer LNAI</div>
-        </li>
-        <li>
-          Ho, T.-L., <strong>Lam, T.-P.</strong> "A Robust Causal-Inference Framework for Optimizing Direct-Marketing Campaigns." <em>Computational Intelligence in Engineering Science</em> (ICCIES 2026), Springer.
-          <a class="doi" href="https://doi.org/10.1007/978-3-032-21628-1_4" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-3-032-21628-1_4</a>
-          <div class="badge">Scopus</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Nguyen, H.-D. "Stochastic Stability and Controller Design for Positive Takagi-Sugeno Fuzzy Systems with Delay under Levy Noise." <em>6th International Conference on Mathematics of the Central Region and the Central Highlands</em>, 2026.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D. "State Capitalism in the AI Era: Assessing South Korea's Digital and Green New Deals." <em>HUIT Journal of Science, ICE 2026 special issue</em>.
-          <a class="doi" href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.509" target="_blank" rel="noopener noreferrer">doi.org/10.62985/j.huit_ojs.vol26.no3e.509</a>
-          <div class="badge">Published</div>
-        </li>
-        <li>
-          Bui-Nguyen, P.-D., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q. "Beyond the Device: B2G Ecosystems and Human-in-the-Loop Services for Care Robots in South Korea's Silver Economy." <em>HUIT Journal of Science, ICE 2026 special issue</em>.
-          <a class="doi" href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.583" target="_blank" rel="noopener noreferrer">doi.org/10.62985/j.huit_ojs.vol26.no3e.583</a>
-          <div class="badge">Published</div>
-        </li>
-        <li>
-          Le, P.-T., Ho, T.-L., <strong>Lam, T.-P.</strong> "US Tariff Pass-Through to Vietnam: A Sign-Restricted Bayesian SVAR." <em>ICOAE 2026, International Conference on Applied Economics</em>, Warsaw.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Le, P.-T., Ho, T.-L., <strong>Lam, T.-P.</strong> "Bayesian VAR Analysis of US Economic Crisis Transmission to Vietnam: Lessons from 2007-2008 and Structural Buffers of the Post-GFC Decade." <em>ICOAE 2026</em>, Warsaw.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Nguyen, H.-D., <strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D. "ChatGPT versus Google: A Bayesian Meta-Analysis." <em>AI and Digital Transformation</em>, TDMU proceedings (ISBN), 2026.
-          <div class="badge">Published</div>
-        </li>
-        <li>
-          Doan, T.-H., Tran, V.-T., <strong>Lam, T.-P.</strong> "Who Really Cares About Privacy? A Bayesian Quantile Regression of Privacy Risk Effects on Digital Banking Adoption Intention in Vietnam." <em>ECONVN'2026/27, 10th International Econometric Conference of Vietnam</em>, Springer (Studies in Systems, Decision and Control), submission 43.
-          <div class="badge">Best Paper Award, Second Place</div>
-          <div class="badge">Accepted and presented</div>
-        </li>
-        <li>
-          Huynh-Nguyen, A.-V., Tran, V.-T., <strong>Lam, T.-P.</strong> "Causal Inference for Promotional Campaign Effects in E-Commerce with Extreme Sparsity: A Multi-Method Comparison." <em>ECONVN'2026/27</em>, Springer (Studies in Systems, Decision and Control), submission 31.
-          <div class="badge">Accepted and presented</div>
-        </li>
-        <li>
-          Dinh, H.-T., <strong>Lam, T.-P.</strong> "Detecting Chaotic Phase Transitions in Financial Time Series: A Bayesian Evaluation Framework for LSTM Models on High-Frequency VN30 Data." <em>ECONVN'2026/27</em>, Springer (Studies in Systems, Decision and Control), submission 29.
-          <div class="badge">Accepted and presented</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D., Nguyen, N.-M.-Q. "Which Institutional Dimension Is Most Associated With Green Finance? A Bayesian Model Averaging Analysis of a Twelve-Country Developing and ASEAN Panel." <em>ISSD 2026, International Symposium on Sustainable Development, RMIT University Vietnam, 23 October 2026</em>. Abstract printed in the symposium abstract book (p. 37).
-          <div class="badge">Presented; abstract in symposium book</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q., Bui-Nguyen, P.-D. "The Digital Divide and Harmonized Learning Outcomes: A Country-Level Bayesian Regression on World Bank Open Data." <em>ISSD 2026, International Symposium on Sustainable Development, RMIT University Vietnam, 23 October 2026</em>. Abstract printed in the symposium abstract book (pp. 24-25).
-          <div class="badge">Presented; abstract in symposium book</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q., Bui-Nguyen, P.-D. "Spatial Spillovers of Provincial Digital Transformation in Vietnam: A Bayesian Weight-Matrix Ensemble." <em>Proceedings of the International Conference on Digital Economy in Modern Management, 2026</em>.
-          <div class="badge">Conference proceedings</div>
-        </li>
-        <li>
-          <strong>Lam, T.-P.</strong>, Nguyen, H.-D. "Computation, Not Recall: A Contamination-Resistant Benchmark for Tool-Augmented Language Models in Digital Accounting and Auditing." <em>Proceedings of the 6th International Conference on Business Based on Digital Platform (BDP-6), 2026</em>.
-          <div class="badge">Best Paper Award</div>
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Tran, T.-H.-N., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q. "Ứng dụng mô hình dấu vết kiến thức Bayesian mờ (Fuzzy-BKT) đánh giá năng lực thông tin và phát hiện phụ thuộc AI của sinh viên trong hệ thống thư viện số thông minh tại trường đại học." <em>Kỷ yếu Hội thảo Khoa học: Thư viện số và trí tuệ nhân tạo (ISBN 978-632-03-1603-8), 2026</em>.
-          <div class="badge">Conference proceedings</div>
-        </li>
-              <li>
-          Nguyen, D.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong> "The Bayesian Energy Paradox of AI: A Structural Equation Modeling Approach with Informative Priors." <em>Renewable Energy and Sustainable Development: Innovation and Transformation, Springer World Sustainability Series (edited volume)</em>.
-          <div class="badge">Accepted by the Editorial Board; Springer publication pending</div>
-        </li>
-        <li>
-          Nguyen, T.-T.-H., Tran, V.-T., <strong>Lam, T.-P.</strong> "Bayesian Hierarchical Modeling of Green FDI Determinants: Institutional Quality and Climate Finance in Developing Economies." <em>Renewable Energy and Sustainable Development: Innovation and Transformation, Springer World Sustainability Series (edited volume)</em>.
-          <div class="badge">Accepted by the Editorial Board; Springer publication pending</div>
-        </li>
-              <li>
-          Tran, V.-T., Nguyen, H.-A.-V., Nguyen, S.-T., <strong>Lam, T.-P.</strong> "AI-Driven Decision Intelligence in Healthcare Supply Chains: A Most-Similar-Systems Comparison of Three ASEAN Economies." <em>Edited book chapter, IGI Global Scientific Publishing</em>.
-          <div class="badge">Accepted</div>
-        </li>
-              <li>
-          Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong> "Impact of Prompt Quality on Generative AI Response Quality: A Controlled Experiment with IT Students." <em>SOICT 2026, Springer CCIS</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Nguyen, N.-M.-Q., <strong>Lam, T.-P.</strong> "Forgetting as a Feature: A Bayesian Dirichlet Process Mixture with Time-Discounted Chinese Restaurant Process for Online LLM Memory." <em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong> "Spherical Fuzzy TOPSIS for Sustainable Pharmaceutical Supply Chain Nudging." <em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em>.
-          <div class="badge">Accepted</div>
-        </li>
-        <li>
-          Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong> "Regime-Dependent Association between Carbon-Emissions Intensity and Equity-Market Valuation: A Bayesian Hierarchical Panel of Economies, 2000-2023." <em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em>.
-          <div class="badge">Accepted</div>
-        </li>
+    <li class="pub">
+      <h3 class="pub-title">AgenticGraph-RAG: Multi-Hop Question Answering via Graph-Augmented Retrieval and Adversarial Tool-Augmented Generation</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Tran, V.-T., Nguyen, H.-A.-V.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>FICTA 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Scopus</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">RAG-Based Algorithmic Assurance for Greenwashing Detection</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Tran, V.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong>, Nguyen, S.-T.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>SCI 2026, 8th International Conference on Smart Computing and Informatics</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Scopus / WoS</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">AI-Powered Supply Chain Intelligence: Balancing Algorithmic Visibility and Compliance Risk in EV Battery Networks</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Tran, V.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong>, Nguyen, S.-T.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>SCI 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Best Paper Award</div> <div class="badge">Scopus / WoS</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Bayesian Network Inference for Resolving Uncertainty in Financial Depth-Stability Links</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Ho, T.-L.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>IUKM 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.1007/978-981-92-5644-0_1" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-981-92-5644-0_1</a> <div class="badge">Springer LNAI</div> <span class="pub-note">Springer LNAI series</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">An Optimization Framework for Smart Warehouse Bin Assignment: Bayesian Optimization with APP Sample Planning and Gain-Probability Evaluation</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, T.-N., et al., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>IUKM 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.1007/978-981-92-5644-0_31" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-981-92-5644-0_31</a> <div class="badge">Springer LNAI</div> <span class="pub-note">Springer LNAI series</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">A Robust Causal-Inference Framework for Optimizing Direct-Marketing Campaigns</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Ho, T.-L., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Computational Intelligence in Engineering Science</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.1007/978-3-032-21628-1_4" target="_blank" rel="noopener noreferrer">doi.org/10.1007/978-3-032-21628-1_4</a> <div class="badge">Scopus</div> <span class="pub-note">ICCIES 2026</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Stochastic Stability and Controller Design for Positive Takagi-Sugeno Fuzzy Systems with Delay under Levy Noise</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Nguyen, H.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>6th International Conference on Mathematics of the Central Region and the Central Highlands</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">State Capitalism in the AI Era: Assessing South Korea's Digital and Green New Deals</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>HUIT Journal of Science, ICE 2026 special issue</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.509" target="_blank" rel="noopener noreferrer">doi.org/10.62985/j.huit_ojs.vol26.no3e.509</a> <div class="badge">Published</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Beyond the Device: B2G Ecosystems and Human-in-the-Loop Services for Care Robots in South Korea's Silver Economy</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Bui-Nguyen, P.-D., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>HUIT Journal of Science, ICE 2026 special issue</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><a class="doi" href="https://doi.org/10.62985/j.huit_ojs.vol26.no3e.583" target="_blank" rel="noopener noreferrer">doi.org/10.62985/j.huit_ojs.vol26.no3e.583</a> <div class="badge">Published</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">US Tariff Pass-Through to Vietnam: A Sign-Restricted Bayesian SVAR</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Le, P.-T., Ho, T.-L., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ICOAE 2026, International Conference on Applied Economics</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div> <span class="pub-note">Warsaw</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Bayesian VAR Analysis of US Economic Crisis Transmission to Vietnam: Lessons from 2007-2008 and Structural Buffers of the Post-GFC Decade</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Le, P.-T., Ho, T.-L., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ICOAE 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div> <span class="pub-note">Warsaw</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">ChatGPT versus Google: A Bayesian Meta-Analysis</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, H.-D., <strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>AI and Digital Transformation</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">TDMU proceedings</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Published</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Who Really Cares About Privacy? A Bayesian Quantile Regression of Privacy Risk Effects on Digital Banking Adoption Intention in Vietnam</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Doan, T.-H., Tran, V.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ECONVN'2026/27, 10th International Econometric Conference of Vietnam</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Best Paper Award, Second Place</div> <div class="badge">Accepted and presented</div> <span class="pub-note">Series: Studies in Systems, Decision and Control · Submission 43</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Causal Inference for Promotional Campaign Effects in E-Commerce with Extreme Sparsity: A Multi-Method Comparison</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Huynh-Nguyen, A.-V., Tran, V.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ECONVN'2026/27</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted and presented</div> <span class="pub-note">Series: Studies in Systems, Decision and Control · Submission 31</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Detecting Chaotic Phase Transitions in Financial Time Series: A Bayesian Evaluation Framework for LSTM Models on High-Frequency VN30 Data</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Dinh, H.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ECONVN'2026/27</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted and presented</div> <span class="pub-note">Series: Studies in Systems, Decision and Control · Submission 29</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Which Institutional Dimension Is Most Associated With Green Finance? A Bayesian Model Averaging Analysis of a Twelve-Country Developing and ASEAN Panel</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Bui-Nguyen, P.-D., Nguyen, N.-M.-Q.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ISSD 2026, International Symposium on Sustainable Development, RMIT University Vietnam, 23 October 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Presented; abstract in symposium book</div> <span class="pub-note">Abstract printed in the symposium abstract book (p. 37)</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">The Digital Divide and Harmonized Learning Outcomes: A Country-Level Bayesian Regression on World Bank Open Data</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q., Bui-Nguyen, P.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>ISSD 2026, International Symposium on Sustainable Development, RMIT University Vietnam, 23 October 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Presented; abstract in symposium book</div> <span class="pub-note">Abstract printed in the symposium abstract book (pp. 24-25)</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Spatial Spillovers of Provincial Digital Transformation in Vietnam: A Bayesian Weight-Matrix Ensemble</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q., Bui-Nguyen, P.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Proceedings of the International Conference on Digital Economy in Modern Management, 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Conference proceedings</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Computation, Not Recall: A Contamination-Resistant Benchmark for Tool-Augmented Language Models in Digital Accounting and Auditing</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v"><strong>Lam, T.-P.</strong>, Nguyen, H.-D.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Proceedings of the 6th International Conference on Business Based on Digital Platform (BDP-6), 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Best Paper Award</div> <div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Ứng dụng mô hình dấu vết kiến thức Bayesian mờ (Fuzzy-BKT) đánh giá năng lực thông tin và phát hiện phụ thuộc AI của sinh viên trong hệ thống thư viện số thông minh tại trường đại học</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Tran, T.-H.-N., <strong>Lam, T.-P.</strong>, Nguyen, N.-M.-Q.</span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Kỷ yếu Hội thảo Khoa học: Thư viện số và trí tuệ nhân tạo (ISBN 978-632-03-1603-8), 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Conference proceedings</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">The Bayesian Energy Paradox of AI: A Structural Equation Modeling Approach with Informative Priors</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, D.-T., Nguyen, H.-A.-V., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Renewable Energy and Sustainable Development: Innovation and Transformation, Springer World Sustainability Series (edited volume)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted by the Editorial Board; Springer publication pending</div> <span class="pub-note">Edited volume, Springer World Sustainability Series</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Bayesian Hierarchical Modeling of Green FDI Determinants: Institutional Quality and Climate Finance in Developing Economies</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, T.-T.-H., Tran, V.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Renewable Energy and Sustainable Development: Innovation and Transformation, Springer World Sustainability Series (edited volume)</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted by the Editorial Board; Springer publication pending</div> <span class="pub-note">Edited volume, Springer World Sustainability Series</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">AI-Driven Decision Intelligence in Healthcare Supply Chains: A Most-Similar-Systems Comparison of Three ASEAN Economies</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Tran, V.-T., Nguyen, H.-A.-V., Nguyen, S.-T., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>Edited book chapter</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">IGI Global Scientific Publishing</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Impact of Prompt Quality on Generative AI Response Quality: A Controlled Experiment with IT Students</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>SOICT 2026</em></span></div>
+      <div class="pub-field"><span class="pub-k">Publisher</span><span class="pub-v">Springer</span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div> <span class="pub-note">Springer CCIS series</span></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Forgetting as a Feature: A Bayesian Dirichlet Process Mixture with Time-Discounted Chinese Restaurant Process for Online LLM Memory</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, N.-M.-Q., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Spherical Fuzzy TOPSIS for Sustainable Pharmaceutical Supply Chain Nudging</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
+    <li class="pub">
+      <h3 class="pub-title">Regime-Dependent Association between Carbon-Emissions Intensity and Equity-Market Valuation: A Bayesian Hierarchical Panel of Economies, 2000-2023</h3>
+      <div class="pub-field"><span class="pub-k">Authors</span><span class="pub-v">Nguyen, N.-M.-Q., Ho-Van, K., <strong>Lam, T.-P.</strong></span></div>
+      <div class="pub-field"><span class="pub-k">Venue</span><span class="pub-v"><em>EAI FISAT 2026, International Conference on Intelligent Systems and Advanced Technologies</em></span></div>
+      <div class="pub-field"><span class="pub-k">Year</span><span class="pub-v">2026</span></div>
+      <div class="pub-meta"><div class="badge">Accepted</div></div>
+    </li>
       </ol>
     </section>
     <section id="service">
