@@ -42,6 +42,9 @@ a{color:var(--acc)}
 .site-nav a{color:var(--fg)}
 .site-nav a.active{color:var(--acc);border-bottom-color:var(--acc)}
 .site-nav a:hover{color:var(--acc)}
+
+#rows{overflow-wrap:anywhere}
+.it-f>span{min-width:0}
 </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -75,10 +78,15 @@ var $=function(i){return document.getElementById(i)};
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function cleanTitle(t){
  var s=String(t||'').trim();
+ if(s.indexOf('/')>=0)s=s.split('/').pop();
  if(s.length>1&&s.charAt(0)==='"'&&s.charAt(s.length-1)==='"')s=s.slice(1,-1).trim();
- if(/\.(djvu|pdf|epub|mobi|azw3?|chm|txt|docx?)$/i.test(s)){s=s.replace(/\.[a-z0-9]+$/i,'').replace(/_/g,' ')}
+ if(/\.(djvu|pdf|epub|mobi|azw3?|chm|txt|docx?|tiff?|indd)$/i.test(s))s=s.replace(/\.[a-z0-9]+$/i,'');
+ s=s.replace(/_/g,' ').replace(/^0+\s+/,'');
  s=s.replace(/^[^A-Za-z0-9\u00C0-\u024F\u1E00-\u1EFF]+/,'').replace(/"\.\s*In:/,'. In:').replace(/\s+/g,' ').trim();
  if(/^[A-Za-z0-9_-]{6,}$/.test(s)&&/\d/.test(s)&&/[a-z]/.test(s)&&/[A-Z]/.test(s))return'';
+ if(s.indexOf(' ')<0&&/\d/.test(s)&&!/^\d{4}$/.test(s)){
+   var runs=s.match(/[A-Za-z]+/g)||[],mx=0;for(var i=0;i<runs.length;i++)mx=Math.max(mx,runs[i].length);
+   if(mx<5)return''}
  return s}
 function link(d){if(!d)return'';if(d.indexOf('https://doi.org/')===0)return'<a href="'+esc(d)+'" target="_blank" rel="noopener noreferrer">'+esc(d.slice(16))+'</a>';return esc(d)}
 function render(){
