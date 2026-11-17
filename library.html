@@ -5,46 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Library</title>
 <style>
-:root{--bg:#fff;--fg:#1d2330;--mut:#5c6578;--line:#dfe3ec;--acc:#0b5cab;--card:#f6f8fc}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141c;--fg:#e6e9f0;--mut:#9aa3b5;--line:#2a3140;--acc:#6db3ff;--card:#171c27}}
-:root[data-theme="dark"]{--bg:#10141c;--fg:#e6e9f0;--mut:#9aa3b5;--line:#2a3140;--acc:#6db3ff;--card:#171c27}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}
-main{max-width:1000px;margin:0 auto;padding:24px 16px 64px}
-h1{margin:0 0 4px;font-size:1.6rem}
-.sub{color:var(--mut);margin:0 0 16px}
+body{margin:0 auto;max-width:900px;padding:1.5rem;background:#ffffff;color:#1a1a1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+main{padding:0}
+h1{margin:0 0 .5rem;font-size:2rem;font-weight:700}
+.sub{color:#666;margin:0 0 1rem}
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
-input,select,button{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
-input{flex:1 1 240px}
+input,select,button{font:inherit;color:#1a1a1a;background:#f7f7f7;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px}
+input{flex:1 1 240px;background:#ffffff}
 button{cursor:pointer}
 button:disabled{opacity:.4;cursor:default}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
-td.y{white-space:nowrap;width:5em}
-a{color:var(--acc)}
-.k{display:inline-block;font-size:.7rem;padding:1px 6px;border-radius:99px;border:1px solid var(--line);color:var(--mut);margin-right:6px}
-.pg{display:flex;align-items:center;gap:8px;margin-top:12px;color:var(--mut)}
-.note{color:var(--mut);font-size:.85rem;margin-top:20px}
-@media (max-width:600px){th.a,td.a{display:none}}
-
-    .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.75rem 0; margin-bottom: 1.5rem; border-bottom: 2px solid #F37021; }
-    .site-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
-    .site-nav a:hover { color: #F37021; }
-    .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
-  
-.item{padding:12px 2px;border-bottom:1px solid var(--line)}
-.it-title{font-weight:650;font-size:1.05rem;line-height:1.4}
-.it-title .k{vertical-align:2px}
+a{color:#C1440E}
+.k{display:inline-block;background:#C1440E;color:#ffffff;font-size:.72rem;font-weight:600;padding:.18rem .55rem;border-radius:12px;margin-right:.5rem;vertical-align:2px}
+.item{padding:12px 2px;border-bottom:1px solid #e0e0e0}
+.it-title{font-weight:700;font-size:1.08rem;line-height:1.4}
 .it-f{display:flex;gap:.6rem;margin:.18rem 0;font-size:.95rem}
-.it-k{flex:0 0 4.6rem;color:var(--mut);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding-top:.18rem}
-.untitled{color:var(--mut);font-style:italic}
-.site-nav a{color:var(--fg)}
-.site-nav a.active{color:var(--acc);border-bottom-color:var(--acc)}
-.site-nav a:hover{color:var(--acc)}
-
-#rows{overflow-wrap:anywhere}
+.it-k{flex:0 0 5.4rem;color:#666;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding-top:.2rem}
 .it-f>span{min-width:0}
+#rows{overflow-wrap:anywhere}
+.untitled{color:#666;font-style:italic}
+.pg{display:flex;align-items:center;gap:8px;margin-top:12px;color:#666}
+.note{color:#666;font-size:.85rem;margin-top:20px}
+.site-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;padding:.75rem 0;margin-bottom:1.5rem;border-bottom:2px solid #F37021}
+.site-nav a{color:inherit;text-decoration:none;font-weight:600;font-size:.98rem}
+.site-nav a:hover{color:#F37021}
+.site-nav a.active{color:#F37021;border-bottom:2px solid #F37021}
+@media (prefers-color-scheme:dark){
+ body{background:#121212;color:#e8e8e8}
+ .sub,.it-k,.untitled,.pg,.note{color:#b5b5b5}
+ a{color:#ffb37a}
+ .k{background:#ff8534;color:#1a1a1a}
+ .item{border-bottom-color:#3a3a3a}
+ input,select,button{background:#1e1e1e;color:#e8e8e8;border-color:#3a3a3a}
+ input{background:#121212}
+}
+@media (max-width:600px){body{padding:1rem}h1{font-size:1.5rem}}
 </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
