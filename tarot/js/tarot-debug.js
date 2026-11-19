@@ -3,6 +3,8 @@
    Export actions are gated by a numeric key (prompt). DAR state is shown by colour only. */
 const DEBUG_KEY = "1199";
 window.__dbgErrors = window.__dbgErrors || [];
+const DEO_SESSION_ID = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() :
+    "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16); });
 
 function dbgAskKey() {
     try { if (localStorage.getItem("tarotDbgUnlocked") === "1") return true; } catch (e) {}
@@ -24,6 +26,7 @@ function dbgBundle() {
     return {
         app: "Cau3Tarot (publications clone)",
         bundle_id: "dbg-" + Date.now().toString(36),
+        deo_session_id: DEO_SESSION_ID,
         exported_at: new Date().toISOString(),
         url: location.href,
         user_agent: navigator.userAgent,
@@ -70,7 +73,8 @@ function darRender() {
     try { cards = JSON.parse(localStorage.getItem("tarot1_cards") || "[]"); } catch (e) { cards = []; }
     const q = (document.getElementById("querent-name") || {}).value || "(trống)";
     ov.textContent =
-        "DEO · " + new Date().toLocaleTimeString("vi-VN") +
+        "DEO · " + DEO_SESSION_ID +
+        " · " + new Date().toLocaleTimeString("vi-VN") +
         " · Người hỏi: " + q +
         " · Lá đã rút: " + (Array.isArray(cards) ? cards.length : 0) + "/10" +
         " · Lỗi ghi nhận: " + window.__dbgErrors.length;
