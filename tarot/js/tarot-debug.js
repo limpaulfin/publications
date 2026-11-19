@@ -1,4 +1,5 @@
 /* tarot-debug.js — Combo Debug (FP-015): (1) Tải JSON, (2) Gửi log debug, (3) DAR.
+   This static deployment has no backend, so the bar ships one export button + DAR only; the export button SHARES the JSON file via the share sheet, it does not download (user rulings 2026-11-19).
    Export actions are gated by a numeric key (prompt). DAR state is shown by colour only. */
 const DEBUG_KEY = "1199";
 window.__dbgErrors = window.__dbgErrors || [];
@@ -46,11 +47,6 @@ function dbgDownload(bundle) {
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
 }
 
-function downloadDebugJSON() {
-    if (!dbgAskKey()) return;
-    dbgDownload(dbgBundle());
-}
-
 async function shareDebugLog() {
     if (!dbgAskKey()) return;
     const bundle = dbgBundle();
@@ -93,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const d = document.getElementById("dbg-download");
     const s = document.getElementById("dbg-share");
     const r = document.getElementById("dbg-dar");
-    if (d) d.addEventListener("click", downloadDebugJSON);
+    if (d) d.addEventListener("click", shareDebugLog);
     if (s) s.addEventListener("click", shareDebugLog);
     if (r) r.addEventListener("click", toggleDAR);
 });
