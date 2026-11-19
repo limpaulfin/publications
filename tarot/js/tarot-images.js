@@ -135,18 +135,26 @@ function downloadSpreadImage() {
         ctx.restore();
     });
     const date = new Date().toISOString().split("T")[0];
-    const a = document.createElement("a");
-    a.href = canvas.toDataURL("image/png");
-    a.download = `celtic-cross-${date}.png`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
     const btn = document.getElementById("download-spread-btn");
-    if (btn) {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Đã tải!';
-        setTimeout(() => { btn.innerHTML = original; }, 2000);
-    }
+    const original = btn ? btn.innerHTML : "";
+    const done = () => { if (btn) { btn.innerHTML = '<i class="fas fa-check"></i> Đã chia sẻ!'; setTimeout(() => { btn.innerHTML = original; }, 2000); } };
+    canvas.toBlob(async (blob) => {
+        if (!blob) return;
+        const file = new File([blob], `celtic-cross-${date}.png`, { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            try { await navigator.share({ files: [file], title: "Trải bài Celtic Cross" }); done(); }
+            catch (e) { /* user cancelled the share sheet */ }
+        } else {
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = file.name;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+            done();
+        }
+    }, "image/png");
 }
 
 function updateAllCardImages() {
