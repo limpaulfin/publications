@@ -12,3 +12,7 @@ h1, h2, .learn-title { font-family: 'Playfair Display', 'Be Vietnam Pro', Georgi
 .card h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; text-align: left; }
 h1 > i, h2 > i { color: #b8860b; }
 button, input, select, textarea { font-family: inherit; }
+
+/* Footer ORCID link (2026-11-19) */
+.copyright .orcid-link { color: #2e7d32; font-weight: 600; text-decoration: none; }
+.copyright .orcid-link:hover { text-decoration: underline; }
