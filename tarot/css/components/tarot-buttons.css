@@ -231,3 +231,7 @@
 .tour-nav button { border-radius: 999px; padding: 8px 18px; font-size: 14px; font-weight: 600; cursor: pointer; }
 .tour-skip { background: transparent; border: 1px solid #b9c4ce; color: #546e7a; }
 .tour-next { background: #1b1040; border: 1.5px solid #f2b33d; color: #ffd97a; }
+
+/* Debug bar: icon-only buttons (2026-11-19) */
+.debug-bar .debug-btn { padding: 10px 18px; }
+.debug-bar .debug-btn i { font-size: 18px; }
