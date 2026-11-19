@@ -6,6 +6,7 @@
         <link rel="icon" href="tarot-favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
         <title>Tarot Thập Giá - Nhập liệu</title>
+        <script>window.__dbgErrors=[];window.addEventListener("error",function(e){window.__dbgErrors.push({msg:e.message,src:e.filename,line:e.lineno,at:new Date().toISOString()});});</script>
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/tarot1.css" />
         <link rel="stylesheet" href="css/components/tarot-suggest.css" />
@@ -121,12 +122,19 @@
             </div>
 
             <div class="copyright">
-                &copy; 2023
-                <a href="https://github.com/NexiumLab/hub-hangul-viet" target="_blank">Lâm Thanh Phong</a>
-                (HUB)
+                &copy; 2023 Lâm Thanh Phong (HUB)<br>
+                <span class="art-credit">Hình ảnh lá bài: bộ Rider-Waite-Smith, tranh của Pamela Colman Smith (1909)</span>
                 <a href="../" class="nav-link"><i class="fas fa-home"></i> Trang chính</a>
                 <a href="https://hub-hangul-viet.nexiumlab.com/" class="nav-link"><i class="fas fa-exchange-alt"></i> Hangul</a>
             </div>
+
+            <div class="debug-bar">
+                <button id="dbg-download" class="debug-btn" type="button"><i class="fas fa-file-download"></i> Tải JSON</button>
+                <button id="dbg-share" class="debug-btn" type="button"><i class="fas fa-bug"></i> Gửi log debug</button>
+                <button id="dbg-dar" class="debug-btn dar-btn" type="button"><i class="fas fa-eye"></i> DAR</button>
+                <span id="dbg-bundle-id" class="dbg-bundle-id"></span>
+            </div>
+            <div id="deo-overlay" class="deo-overlay" style="display:none"></div>
         </div>
 
         <div class="vignette-overlay" id="vignette"></div>
@@ -152,5 +160,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
         <script src="js/tarot-qr.js"></script>
         <script src="js/tarot-pull-refresh.js"></script>
+        <script src="js/tarot-debug.js"></script>
     </body>
 </html>
