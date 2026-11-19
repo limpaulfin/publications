@@ -74,6 +74,7 @@ function renderBirthYearSelect() {
         opt.textContent = y;
         sel.appendChild(opt);
     }
+    sel.value = "2000";
 }
 
 function renderBirthDayMonthSelects() {

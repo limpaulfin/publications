@@ -48,7 +48,8 @@
                             <option value="Other">Khác</option>
                         </select>
                     </div>
-                    <div class="form-group form-half">
+                </div>
+                <div class="form-group">
                         <label>Ngày sinh</label>
                         <div class="dob-row">
                             <select id="querent-birth-day" aria-label="Ngày sinh">
@@ -61,7 +62,6 @@
                                 <option value="">Năm</option>
                             </select>
                         </div>
-                    </div>
                 </div>
                 <div id="querent-history"></div>
             </div>
@@ -90,8 +90,11 @@
 
             <div class="card">
                 <h2>10 vị trí bài (Thập Giá Celtic)
-                    <button id="random-btn" class="reset-btn" title="Rút bài ngẫu nhiên"><i class="fas fa-dice"></i></button>
-                    <button id="clear-cards-btn" class="reset-btn" title="Xoá lá bài + kết quả"><i class="fas fa-eraser"></i></button>
+                    <span class="h2-actions">
+                        <button id="random-btn" class="reset-btn" title="Rút bài ngẫu nhiên"><i class="fas fa-dice"></i></button>
+                        <button id="clear-cards-btn" class="reset-btn" title="Xoá lá bài + kết quả"><i class="fas fa-eraser"></i></button>
+                        <button id="tour-btn" class="reset-btn" title="Hướng dẫn sử dụng"><i class="fas fa-circle-info"></i></button>
+                    </span>
                 </h2>
                 <div id="card-positions"></div>
             </div>
@@ -167,5 +170,6 @@
         <script src="js/tarot-qr.js"></script>
         <script src="js/tarot-pull-refresh.js"></script>
         <script src="js/tarot-debug.js"></script>
+        <script src="js/tarot-tour.js"></script>
     </body>
 </html>
