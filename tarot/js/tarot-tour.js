@@ -4,8 +4,8 @@
 (function () {
     var STEPS = [
         { sel: "#querent-name", title: "Tên người hỏi", text: "Nhập tên người được coi. Gõ vài chữ đầu, app sẽ gợi ý những người đã coi trước đây." },
-        { sel: ".dob-row", title: "Ngày sinh", text: "Chọn ngày, tháng, năm sinh của người hỏi. Năm đã để sẵn 2000 cho dễ chọn tiếp." },
-        { sel: "#question-select", title: "Chủ đề câu hỏi", text: "Chọn chủ đề của buổi coi, và ghi thêm câu hỏi cụ thể ở ô dưới nếu có." },
+        { sel: ".dob-row", title: "Ngày sinh", text: "Chọn ngày, tháng, năm sinh của người hỏi." },
+        { sel: "#question-select", title: "Chủ đề câu hỏi", text: "Chọn chủ đề của buổi coi, và ghi thêm câu hỏi cụ thể ở ô dưới nếu có. Bói mù là khi ta chưa thật sự biết mình muốn hỏi điều gì — cứ để vũ trụ gửi cho ta một tín hiệu." },
         { sel: "#random-btn", title: "Rút bài ngẫu nhiên", text: "Bấm nút xúc xắc để rút ngẫu nhiên đủ 10 lá. Nút tẩy bên cạnh xoá toàn bộ lá bài và kết quả." },
         { sel: "#card-positions", title: "10 vị trí bài", text: "Hoặc chọn tay từng lá cho mỗi vị trí. Gạt công tắc bên phải khi lá bài bị ngược." },
         { sel: "#generate-btn", title: "Giải bài", text: "Khi đã đủ thông tin và đủ 10 lá, bấm Giải bài để tạo kết quả trải bài." },
