@@ -74,6 +74,7 @@ function renderBirthYearSelect() {
         opt.textContent = y;
         sel.appendChild(opt);
     }
+    sel.value = "2000";
 }
 
 function renderBirthDayMonthSelects() {
@@ -96,7 +97,7 @@ function renderBirthDayMonthSelects() {
 /* Resource links (open in a new tab). Fill in the URLs here — a link stays
    hidden while its URL is empty. */
 const TAROT_RESOURCES = {
-    slides: "slides/tarot-intro-v0.2.0.pdf",
+    slides: "https://drive.google.com/file/d/1i_oB2RjvmAS63slhL2y93vP8iKPzqFCV/view",
     video: ""
 };
 

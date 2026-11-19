@@ -79,3 +79,7 @@ h2 {
     flex: 1;
     min-width: 0;
 }
+
+/* DOB full-width row (UX fix 2026-11-19) */
+.dob-row { gap: 8px; }
+.dob-row select { padding: 12px 10px; font-size: 16px; text-align: center; }
