@@ -1,4 +1,5 @@
 /* tarot-debug.js — Combo Debug (FP-015): (1) Tải JSON, (2) Gửi log debug, (3) DAR.
+   This static deployment has no backend, so the bar ships Tải JSON + DAR only (user ruling 2026-11-19).
    Export actions are gated by a numeric key (prompt). DAR state is shown by colour only. */
 const DEBUG_KEY = "1199";
 window.__dbgErrors = window.__dbgErrors || [];
