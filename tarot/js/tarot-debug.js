@@ -4,9 +4,11 @@ const DEBUG_KEY = "1199";
 window.__dbgErrors = window.__dbgErrors || [];
 
 function dbgAskKey() {
+    try { if (localStorage.getItem("tarotDbgUnlocked") === "1") return true; } catch (e) {}
     const k = prompt("Nhập mã số để xuất log debug:");
     if (k === null) return false;
     if (k.trim() !== DEBUG_KEY) { alert("Mã số không đúng."); return false; }
+    try { localStorage.setItem("tarotDbgUnlocked", "1"); } catch (e) {}
     return true;
 }
 
