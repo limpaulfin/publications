@@ -20,7 +20,7 @@
             '<button id="share-qr-img-btn" class="generate-btn share-btn"><i class="fas fa-image"></i> Chia sẻ ảnh QR</button>' +
             '<button id="share-link-btn" class="generate-btn copy-btn-tarot"><i class="fas fa-link"></i> Chia sẻ link</button>' +
             "</div>" +
-            '<button id="qr-close-btn" class="generate-btn scroll-top-btn qr-close"><i class="fas fa-times"></i> Đóng</button>' +
+            '<button id="qr-close-btn" class="generate-btn qr-close-btn"><i class="fas fa-times"></i> Đóng</button>' +
             "</div>";
         document.body.appendChild(panel);
         panel.addEventListener("click", function (e) { if (e.target === panel) hidePanel(); });
