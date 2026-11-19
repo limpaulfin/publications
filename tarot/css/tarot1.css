@@ -1,0 +1,7 @@
+/* Tarot page - imports components */
+@import './components/tarot-form.css';
+@import './components/tarot-cards.css';
+@import './components/tarot-buttons.css';
+@import './components/tarot-spread.css';
+@import './components/tarot-anim.css';
+@import './components/tarot-preview.css';

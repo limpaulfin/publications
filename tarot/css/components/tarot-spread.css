@@ -1,0 +1,103 @@
+.spread-grid {
+    display: grid;
+    grid-template-areas:
+        ".    s5   .    s10"
+        "s4   c12  s6   s9"
+        ".    s3   .    s8"
+        ".    .    .    s7";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 16px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spread-slot {
+    text-align: center;
+    position: relative;
+}
+
+.spread-slot img {
+    width: 60px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.spread-slot img.reversed {
+    box-shadow: 0 0 6px 2px rgba(200, 30, 30, 0.5);
+}
+
+.spread-slot .slot-num {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 9px;
+    line-height: 16px;
+    z-index: 3;
+}
+
+.spread-slot .slot-label {
+    font-size: 7px;
+    color: #888;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+.slot-5 { grid-area: s5; } .slot-4 { grid-area: s4; }
+.slot-6 { grid-area: s6; } .slot-3 { grid-area: s3; }
+.slot-10 { grid-area: s10; } .slot-9 { grid-area: s9; }
+.slot-8 { grid-area: s8; } .slot-7 { grid-area: s7; }
+
+/* Center pair: 1 + 2 overlapping */
+.slot-center-pair {
+    grid-area: c12;
+    position: relative;
+    text-align: center;
+    min-height: 120px;
+    overflow: visible;
+}
+
+.slot-center-pair .slot-1 {
+    position: relative;
+    z-index: 1;
+}
+
+.slot-center-pair .slot-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 2;
+    pointer-events: none;
+}
+.slot-center-pair .slot-2 img,
+.slot-center-pair .slot-2 .slot-num {
+    pointer-events: auto;
+}
+
+.slot-center-pair .slot-2 img {
+    transform: rotate(90deg);
+    opacity: 0.85;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+.slot-center-pair .slot-2 img.reversed {
+    transform: rotate(-90deg);
+}
+
+.slot-center-pair .slot-2 .slot-num {
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+}
+
+.slot-center-pair .slot-2 { cursor: pointer; transition: opacity 0.25s; }
+.slot-center-pair .slot-2.dimmed { opacity: 0.1; }
+.slot-center-pair .slot-label { display: none; }

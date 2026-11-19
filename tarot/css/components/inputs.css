@@ -1,0 +1,184 @@
+/* Input container */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+/* Action buttons (base styles cho các nút chung) */
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.action-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.paste-btn:hover {
+    color: #2196F3;
+}
+
+.history-btn:hover {
+    color: #9C27B0;
+}
+
+.save-btn:hover {
+    color: #4CAF50;
+}
+
+.clear-btn:hover {
+    color: #F44336;
+}
+
+.action-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.action-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+}
+
+/* Input textarea */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
+    transition: border-color 0.2s ease, height 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+/* Button wrapper */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+/* Show All button */
+.show-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.show-all-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.show-all-btn.subtle {
+    border-color: transparent;
+    background-color: #f5f5f5;
+}
+
+.show-all-btn.subtle:hover {
+    border-color: #ddd;
+}
+
+/* Copy button */
+.copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.copy-btn:hover {
+    background-color: #e0e0e0;
+    color: #2196F3;
+}
+
+.copy-btn.copied {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.copy-btn.copied::after {
+    content: " ✓";
+    position: absolute;
+    font-size: 10px;
+    right: 8px;
+    bottom: 8px;
+}
+
+.modal-body .action-btn {
+    margin: 0 auto;
+}
+
+.combined-text {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Noto Sans KR', 'Noto Sans', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    background-color: #fafafa;
+}

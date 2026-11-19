@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="icon" href="tarot-favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="tarot-favicon.png" />
+        <title>Tarot Thập Giá - Nhập liệu</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/tarot1.css" />
+        <link rel="stylesheet" href="css/components/tarot-suggest.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <h1>
+                    <i class="fas fa-star-of-david"></i> Tarot thập giá (Cậu3Tarot)
+                    <button id="reset-btn" class="reset-btn" title="Xoá tất cả"><i class="fas fa-redo"></i></button>
+                </h1>
+                <div class="resource-row" id="resource-row" style="display:none;">
+                    <a id="slides-link" class="nav-link" target="_blank" rel="noopener" style="display:none;"><i class="fas fa-download"></i> Tải slide Tarot</a>
+                    <a id="video-link" class="nav-link" target="_blank" rel="noopener" style="display:none;"><i class="fas fa-play-circle"></i> Video Tarot</a>
+                </div>
+                <div class="resource-row">
+                    <button id="qr-btn" class="nav-link qr-open-btn" title="Hiện mã QR để chia sẻ app"><i class="fas fa-qrcode"></i> Mã QR</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Thông tin người hỏi</h2>
+                <div class="form-group">
+                    <label for="querent-name">Tên</label>
+                    <input type="text" id="querent-name" placeholder="Nhập tên..." autocomplete="off" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group form-half">
+                        <label for="querent-gender">Giới tính</label>
+                        <select id="querent-gender">
+                            <option value="Male">Nam</option>
+                            <option value="Female">Nữ</option>
+                            <option value="Other">Khác</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-half">
+                        <label>Ngày sinh</label>
+                        <div class="dob-row">
+                            <select id="querent-birth-day" aria-label="Ngày sinh">
+                                <option value="">Ngày</option>
+                            </select>
+                            <select id="querent-birth-month" aria-label="Tháng sinh">
+                                <option value="">Tháng</option>
+                            </select>
+                            <select id="querent-birth" aria-label="Năm sinh">
+                                <option value="">Năm</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="querent-history"></div>
+            </div>
+
+            <div class="card">
+                <h2>Câu hỏi</h2>
+                <div class="form-group">
+                    <label for="question-select">Chọn chủ đề</label>
+                    <select id="question-select">
+                        <option value="Blind Reading">Bói mù</option>
+                        <option value="Love & Relationships">Tình yêu & Mối quan hệ</option>
+                        <option value="Career & Work">Sự nghiệp & Công việc</option>
+                        <option value="Finance & Money">Tài chính & Tiền bạc</option>
+                        <option value="Health">Sức khoẻ</option>
+                        <option value="Family">Gia đình</option>
+                        <option value="Education & Growth">Học tập & Phát triển</option>
+                        <option value="Spirituality & Inner Self">Tâm linh & Nội tâm</option>
+                        <option value="Important Decision">Quyết định quan trọng</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="custom-question">Câu hỏi cụ thể (tuỳ chọn)</label>
+                    <input type="text" id="custom-question" placeholder="Nhập câu hỏi cụ thể nếu có..." />
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>10 vị trí bài (Thập Giá Celtic)
+                    <button id="random-btn" class="reset-btn" title="Rút bài ngẫu nhiên"><i class="fas fa-dice"></i></button>
+                    <button id="clear-cards-btn" class="reset-btn" title="Xoá lá bài + kết quả"><i class="fas fa-eraser"></i></button>
+                </h2>
+                <div id="card-positions"></div>
+            </div>
+
+            <div class="card">
+                <button id="generate-btn" class="generate-btn">
+                    <i class="fas fa-magic"></i> Giải bài
+                </button>
+            </div>
+
+            <div class="card" id="result-card" style="display:none;">
+                <h2>Trải bài Celtic Cross
+                    <button id="download-spread-btn" class="reset-btn" title="Tải ảnh trải bài (đúng kích thước, đúng vị trí)"><i class="fas fa-download"></i> Tải ảnh</button>
+                </h2>
+                <div id="spread-visual" class="spread-grid"></div>
+                <div id="history-inject" style="display:none;"></div>
+                <h2 id="toggle-json" style="cursor:pointer;">Kết quả
+                    <label style="font-size:0.7em;margin-left:8px;cursor:pointer;"><input type="radio" name="copy-format" value="json"> JSON</label>
+                    <label style="font-size:0.7em;margin-left:8px;cursor:pointer;"><input type="radio" name="copy-format" value="base64" checked> Base64</label>
+                    <i class="fas fa-chevron-down"></i>
+                </h2>
+                <textarea id="json-output" class="json-output" readonly style="display:none;"></textarea>
+                <div class="btn-row">
+                    <button id="copy-json-btn" class="generate-btn copy-btn-tarot">
+                        <i class="fas fa-copy"></i> Sao chép
+                    </button>
+                    <button id="share-btn" class="generate-btn share-btn">
+                        <i class="fas fa-share-alt"></i> Chia sẻ
+                    </button>
+                    <button id="scroll-top-btn" class="generate-btn scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2023
+                <a href="https://github.com/NexiumLab/hub-hangul-viet" target="_blank">Lâm Thanh Phong</a>
+                (HUB)
+                <a href="../" class="nav-link"><i class="fas fa-home"></i> Trang chính</a>
+                <a href="https://hub-hangul-viet.nexiumlab.com/" class="nav-link"><i class="fas fa-exchange-alt"></i> Hangul</a>
+            </div>
+        </div>
+
+        <div class="vignette-overlay" id="vignette"></div>
+        <div class="mystical-bar" id="mystical-bar">
+            <div class="pos-label" id="bar-pos"></div>
+            <div class="card-reveal" id="bar-card"></div>
+        </div>
+
+        <script src="js/tarot-deck.js"></script>
+        <script src="js/tarot-positions.js"></script>
+        <script src="js/tarot-auth.js"></script>
+        <script src="js/tarot-card-preview.js"></script>
+        <script src="js/tarot-images.js"></script>
+        <script src="js/tarot-random.js"></script>
+        <script src="js/tarot-storage.js"></script>
+        <script src="js/tarot-api.js"></script>
+        <script src="js/tarot-history-policy.js"></script>
+        <script src="js/tarot-querent-history.js"></script>
+        <script src="js/tarot-querent-ui.js"></script>
+        <script src="js/tarot-querent.js"></script>
+        <script src="js/tarot-ui.js"></script>
+        <script src="js/tarot1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        <script src="js/tarot-qr.js"></script>
+        <script src="js/tarot-pull-refresh.js"></script>
+    </body>
+</html>

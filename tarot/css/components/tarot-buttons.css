@@ -1,0 +1,194 @@
+.generate-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.generate-btn:hover {
+    background: var(--primary-light);
+}
+
+.copy-btn-tarot {
+    margin-top: 10px;
+    background: var(--secondary-color);
+}
+
+.copy-btn-tarot:hover {
+    background: var(--secondary-light);
+}
+
+.reset-btn {
+    float: right;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: #888;
+    font-size: 14px;
+}
+
+.reset-btn:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.json-output {
+    width: 100%;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    resize: none;
+    background: #f8f9fa;
+}
+
+.btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-row .copy-btn-tarot {
+    flex: 1;
+    margin-top: 0;
+}
+
+.share-btn {
+    background: #2e7d32;
+}
+
+.share-btn:hover {
+    background: #388e3c;
+}
+
+.btn-row .share-btn {
+    flex: 1;
+    margin-top: 0;
+}
+
+.resource-row {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.resource-row .nav-link {
+    margin-left: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.qr-open-btn {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Pull-to-refresh indicator */
+#ptr-bar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -60px);
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 0 0 16px 16px;
+    font-size: 13px;
+    z-index: 9999;
+    transition: transform 0.15s ease-out;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+#ptr-bar.ptr-ready {
+    background: #2e7d32;
+}
+
+#ptr-bar.ptr-spin i {
+    animation: spin 0.7s linear infinite;
+}
+
+/* QR panel */
+.qr-panel {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    padding: 16px;
+}
+
+.qr-box {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 340px;
+    width: 100%;
+    text-align: center;
+}
+
+.qr-code {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+    min-height: 220px;
+    align-items: center;
+}
+
+.qr-url {
+    font-size: 12px;
+    color: #666;
+    word-break: break-all;
+    margin-bottom: 6px;
+}
+
+.qr-fallback {
+    font-size: 13px;
+    color: #888;
+}
+
+.qr-close {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.scroll-top-btn {
+    width: 48px;
+    flex-shrink: 0;
+    background: #666;
+    margin-top: 0;
+}
+
+.scroll-top-btn:hover {
+    background: #444;
+}
+
+.nav-link {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: var(--primary-color);
+    color: white !important;
+    border-radius: 4px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background: var(--primary-light);
+}

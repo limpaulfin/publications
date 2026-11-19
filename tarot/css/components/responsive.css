@@ -1,0 +1,103 @@
+/* Responsive styles */
+@media (max-width: 600px) {
+    .char-block {
+        min-width: 40px;
+        max-width: 50px;
+        padding: 4px 3px;
+    }
+
+    .hangul {
+        font-size: 22px;
+        margin-bottom: 2px;
+    }
+
+    .latin {
+        font-size: 12px;
+    }
+
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .line-break {
+        height: 8px;
+        margin: 3px 0;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .action-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .action-btn .tooltip {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    textarea {
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 16px;
+        min-height: 120px;
+        max-height: none;
+        line-height: 1.6;
+    }
+
+    .modal-content {
+        margin: 5px;
+        width: calc(100% - 10px);
+    }
+
+    .modal-header h2 {
+        font-size: 16px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .combined-text {
+        min-height: 150px;
+        max-height: 300px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    h1 i {
+        font-size: 18px;
+    }
+
+    h2 i {
+        font-size: 16px;
+    }
+
+    .copyright {
+        font-size: 11px;
+        padding: 8px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
