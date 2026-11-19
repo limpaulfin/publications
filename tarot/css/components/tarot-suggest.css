@@ -1,0 +1,62 @@
+.suggest-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggest-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.suggest-item:last-child { border-bottom: none; }
+
+.suggest-item:hover, .suggest-item.active {
+    background: var(--primary-color, #005180);
+    color: #fff;
+}
+
+.suggest-item strong { font-weight: 600; }
+.suggest-item span { color: #888; font-size: 12px; margin-left: 8px; }
+.suggest-item:hover span { color: rgba(255,255,255,0.8); }
+
+#querent-history {
+    display: none;
+    margin-top: 8px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+#querent-history h4 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--primary-color, #005180);
+}
+
+.history-item {
+    padding: 4px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.history-item:last-child { border-bottom: none; }
+.history-item small { color: #999; }
+
+.history-click { cursor: pointer; }
+.history-click:hover { text-decoration: underline; }
+.history-json { font-size: 11px; background: #f0f0f0; padding: 6px; border-radius: 3px; margin: 4px 0; max-height: 200px; overflow: auto; white-space: pre-wrap; word-break: break-all; }
+.del-spread { background: none; border: none; color: #c00; cursor: pointer; font-size: 14px; padding: 0 4px; }
+.del-spread:hover { color: #f00; }

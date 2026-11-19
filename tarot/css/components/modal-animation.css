@@ -1,0 +1,71 @@
+/* CSS cho hiệu ứng slideup modal */
+
+/* Thêm class cho modal có hiệu ứng slideup */
+.modal.slideup-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
+        background-color 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    /* Đảm bảo overflow hidden để không hiển thị nội dung vượt quá màn hình */
+    overflow: hidden;
+    will-change: opacity, background-color;
+}
+
+.modal.slideup-animation.show {
+    /* Đặt vị trí nội dung ở dưới */
+    opacity: 1;
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Điều chỉnh modal-content để chuẩn bị cho hiệu ứng slideup */
+.modal.slideup-animation .modal-content {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Thêm transition để tạo hiệu ứng mượt mà */
+    transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1),
+        opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    will-change: transform, opacity;
+    /* Đặt margin để giữ khoảng cách phù hợp với bottom */
+    margin-bottom: 20px;
+    /* Trạng thái mặc định khi chưa hiển thị */
+    transform: translateY(100%);
+    opacity: 0;
+    /* Đảm bảo modal-content luôn được hiển thị đúng cách trong quá trình transition */
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Trạng thái khi hiển thị */
+.modal.slideup-animation.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Thêm kiểu cho modal khi hiển thị trên thiết bị di động */
+@media (max-width: 600px) {
+    .modal.slideup-animation .modal-content {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        /* Bo tròn chỉ ở trên cùng */
+        margin-bottom: 0;
+    }
+}
