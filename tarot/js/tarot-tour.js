@@ -10,7 +10,8 @@
         { sel: "#card-positions", title: "10 vị trí bài", text: "Hoặc chọn tay từng lá cho mỗi vị trí. Gạt công tắc bên phải khi lá bài bị ngược." },
         { sel: "#generate-btn", title: "Giải bài", text: "Khi đã đủ thông tin và đủ 10 lá, bấm Giải bài để tạo kết quả trải bài." },
         { sel: "#download-spread-btn", title: "Chia sẻ ảnh trải bài", text: "Chia sẻ ảnh toàn bộ trải bài, đúng kích thước và vị trí như đang thấy trên màn hình." },
-        { sel: "#copy-json-btn", title: "Gửi kết quả đi", text: "Sao chép kết quả, hoặc bấm Chia sẻ để gửi thẳng một file kết quả cho người coi." }
+        { sel: "#copy-json-btn", title: "Gửi kết quả đi", text: "Sao chép kết quả, hoặc bấm Chia sẻ để gửi thẳng một file kết quả cho người coi." },
+        { sel: "#share-btn", title: "Làm gì với kết quả này?", text: "Dán kết quả vào ChatGPT, Gemini hay một AI khác để được giải bài ngay. Hoặc gửi email cho anh Phong (phongbayesian.phd@gmail.com) để anh Phong giải trực tiếp — anh nhận khá nhiều mail mỗi ngày nên đôi khi trả lời hơi chậm, bạn thông cảm nhé." }
     ];
     var idx = 0, hole = null, tip = null, catcher = null;
 
