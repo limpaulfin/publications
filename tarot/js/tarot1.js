@@ -96,19 +96,17 @@ function renderBirthDayMonthSelects() {
 /* Resource links (open in a new tab). Fill in the URLs here — a link stays
    hidden while its URL is empty. */
 const TAROT_RESOURCES = {
-    slides: "",
+    slides: "slides/tarot-intro-v0.2.0.pdf",
     video: ""
 };
 
 function initResourceLinks() {
-    const row = document.getElementById("resource-row");
-    if (!row) return;
-    let any = false;
     [["slides-link", TAROT_RESOURCES.slides], ["video-link", TAROT_RESOURCES.video]].forEach(([id, url]) => {
         const a = document.getElementById(id);
-        if (a && url) { a.href = url; a.style.display = ""; any = true; }
+        if (!a) return;
+        if (url) { a.href = url; a.classList.remove("is-pending"); }
+        else { a.removeAttribute("href"); a.classList.add("is-pending"); a.title = "Link đang được cập nhật"; }
     });
-    row.style.display = any ? "" : "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -5,3 +5,10 @@
 @import './components/tarot-spread.css';
 @import './components/tarot-anim.css';
 @import './components/tarot-preview.css';
+
+/* Typography (design pass 2026-11-19): mystical serif headings + clean VN body font */
+body { font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+h1, h2, .learn-title { font-family: 'Playfair Display', 'Be Vietnam Pro', Georgia, serif; }
+.card h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; text-align: left; }
+h1 > i, h2 > i { color: #b8860b; }
+button, input, select, textarea { font-family: inherit; }
