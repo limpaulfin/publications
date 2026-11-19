@@ -9,7 +9,7 @@
         { sel: "#random-btn", title: "Rút bài ngẫu nhiên", text: "Bấm nút xúc xắc để rút ngẫu nhiên đủ 10 lá. Nút tẩy bên cạnh xoá toàn bộ lá bài và kết quả." },
         { sel: "#card-positions", title: "10 vị trí bài", text: "Hoặc chọn tay từng lá cho mỗi vị trí. Gạt công tắc bên phải khi lá bài bị ngược." },
         { sel: "#generate-btn", title: "Giải bài", text: "Khi đã đủ thông tin và đủ 10 lá, bấm Giải bài để tạo kết quả trải bài." },
-        { sel: "#download-spread-btn", title: "Tải ảnh trải bài", text: "Tải ảnh toàn bộ trải bài về máy, đúng kích thước và vị trí như đang thấy trên màn hình." },
+        { sel: "#download-spread-btn", title: "Chia sẻ ảnh trải bài", text: "Chia sẻ ảnh toàn bộ trải bài, đúng kích thước và vị trí như đang thấy trên màn hình." },
         { sel: "#copy-json-btn", title: "Gửi kết quả đi", text: "Sao chép kết quả, hoặc bấm Chia sẻ để gửi thẳng một file kết quả cho người coi." }
     ];
     var idx = 0, hole = null, tip = null, catcher = null;
