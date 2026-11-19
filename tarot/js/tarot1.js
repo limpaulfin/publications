@@ -98,7 +98,7 @@ function renderBirthDayMonthSelects() {
    hidden while its URL is empty. */
 const TAROT_RESOURCES = {
     slides: "https://drive.google.com/file/d/1i_oB2RjvmAS63slhL2y93vP8iKPzqFCV/view",
-    video: ""
+    video: "https://www.youtube.com/watch?v=9CRYSig72Kc"
 };
 
 function initResourceLinks() {
