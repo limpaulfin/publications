@@ -98,11 +98,12 @@ function renderBirthDayMonthSelects() {
    hidden while its URL is empty. */
 const TAROT_RESOURCES = {
     slides: "https://drive.google.com/file/d/1i_oB2RjvmAS63slhL2y93vP8iKPzqFCV/view",
-    video: "https://www.youtube.com/watch?v=9CRYSig72Kc"
+    video: "https://www.youtube.com/watch?v=9CRYSig72Kc",
+    guide: "https://www.youtube.com/watch?v=J0JajwcMwHI"
 };
 
 function initResourceLinks() {
-    [["slides-link", TAROT_RESOURCES.slides], ["video-link", TAROT_RESOURCES.video]].forEach(([id, url]) => {
+    [["slides-link", TAROT_RESOURCES.slides], ["video-link", TAROT_RESOURCES.video], ["guide-link", TAROT_RESOURCES.guide]].forEach(([id, url]) => {
         const a = document.getElementById(id);
         if (!a) return;
         if (url) { a.href = url; a.classList.remove("is-pending"); }
