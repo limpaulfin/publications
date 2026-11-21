@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images - Thanh-Phong Lam</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+    header { border-bottom: 2px solid #F37021; padding-bottom: 2rem; margin-bottom: 2rem; }
+    .header-title { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.5rem; }
+    .header-subtitle { font-size: 1rem; font-weight: 400; color: #666; margin-bottom: 1rem; }
+    .header-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .header-links a { color: #C1440E; text-decoration: none; border-bottom: 1px solid transparent; }
+    .header-links a:hover { border-bottom: 1px solid #C1440E; }
+    .scope-statement { font-size: 0.95rem; color: #555; margin-bottom: 1rem; font-style: italic; }
+    .research-themes { font-size: 0.95rem; color: #555; margin-bottom: 0; }
+    main { display: flex; flex-direction: column; gap: 2.5rem; }
+    section { display: flex; flex-direction: column; gap: 1.5rem; }
+    h2 { font-size: 1.4rem; font-weight: 700; color: #C1440E; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.5rem; }
+    ol, ul { list-style-position: outside; margin-left: 1.5rem; }
+    li { margin-bottom: 1.5rem; line-height: 1.7; }
+    .badge {
+      display: inline-block; background-color: #C1440E; color: #ffffff;
+      font-size: 0.75rem; font-weight: 600; padding: 0.35rem 0.65rem;
+      border-radius: 12px; margin-top: 0.5rem;
+    }
+.doi { display: block; margin-top: 0.35rem; font-size: 0.85rem; color: #C1440E; text-decoration: none; word-break: break-all; }
+    .doi:hover { text-decoration: underline; }
+    .doi-note { font-size: 0.85rem; color: #555; margin-top: 0.75rem; }
+    strong { font-weight: 700; }
+    em { font-style: italic; }
+    footer {
+      border-top: 1px solid #e0e0e0; padding-top: 2rem; margin-top: 3rem;
+      font-size: 0.9rem; color: #666; text-align: center;
+    }
+    footer a { color: #F37021; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    /* Dark palette LAST: an equal-specificity rule declared later wins,
+       so these overrides must sit after every light-mode declaration. */
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background-color: #121212; }
+      a { color: #ffb37a; }
+      a:visited { color: #ffb37a; }
+      .header-title { color: #ffffff; }
+      .header-subtitle { color: #c9c9c9; }
+      .header-links a { color: #ffb37a; }
+      .header-links a:hover { border-bottom-color: #ffb37a; }
+      .scope-statement { color: #b5b5b5; }
+      .research-themes { color: #c9c9c9; }
+      h2 { color: #ff9247; border-bottom-color: #3a3a3a; }
+      .badge { background-color: #ff8534; color: #1a1a1a; }
+      footer { border-top-color: #3a3a3a; color: #c9c9c9; }
+      footer a { color: #ffb37a; }
+      .doi { color: #ffb37a; }
+      .doi-note { color: #b5b5b5; }
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .header-title { font-size: 1.5rem; }
+      .header-subtitle { font-size: 0.9rem; }
+      .header-links { font-size: 0.85rem; gap: 0.75rem; }
+      h2 { font-size: 1.2rem; }
+      ol, ul { margin-left: 1.25rem; }
+      li { font-size: 0.95rem; }
+    }
+    .hero { display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; }
+    .hero-text { flex: 1 1 0; min-width: 0; }
+    .portrait { flex: 0 0 200px; width: 200px; height: 260px; border-radius: 12px; object-fit: cover; object-position: top; border: 3px solid #C1440E; }
+    @media (prefers-color-scheme: dark) { .portrait { border-color: #ff8534; } }
+    @media (max-width: 600px) { .hero { gap: 0.9rem; } .portrait { flex-basis: 96px; width: 96px; height: 130px; border-width: 2px; } }
+    .hero-line { margin: 0 0 0.5rem; line-height: 1.5; }
+    .hero-notes { margin-top: 1.5rem; }
+    .hero .header-links { display: flex; flex-direction: column; gap: 0.15rem; margin-top: 0.4rem; font-size: 0.9rem; }
+    .hero .header-links a { margin: 0; }
+    @media (max-width: 600px) { .portrait { flex-basis: 112px; width: 112px; height: 150px; } .hero .header-links { font-size: 0.8rem; } .hero-line { font-size: 0.9rem; } }
+    .hero { align-items: stretch; }
+    .portrait { align-self: stretch; height: auto; min-height: 150px; }
+    .hero-notes .header-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; font-size: 0.9rem; margin: 0 0 1rem; }
+    @media (max-width: 600px) { .portrait { flex-basis: 120px; width: 120px; height: auto; } .hero-notes .header-links { font-size: 0.82rem; gap: 0.2rem 0.9rem; } }
+    .badge { margin-right: 0.4rem; }
+  .cert { display: flex; gap: 1.2rem; align-items: flex-start; margin: 0 0 2rem; }
+    .cert img { width: 260px; max-width: 42%; border-radius: 8px; border: 1px solid #e0e0e0; flex: none; }
+    .cert h2 { margin: 0 0 0.4rem; font-size: 1.15rem; border: 0; padding: 0; }
+    .cert p { margin: 0 0 0.5rem; line-height: 1.55; }
+    .back { display: inline-block; margin: 0 0 1.5rem; font-size: 0.95rem; }
+    @media (max-width: 600px) { .cert { flex-direction: column; } .cert img { width: 100%; max-width: 100%; } }
+  
+    .site-nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; padding: 0.75rem 0; margin-bottom: 1.5rem; border-bottom: 2px solid #F37021; }
+    .site-nav a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
+    .site-nav a:hover { color: #F37021; }
+    .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
+
+    .gallery { display: grid; gap: 1.5rem; margin-top: 1rem; }
+    .gallery figure { margin: 0; }
+    .gallery img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid #e0e0e0; }
+    .gallery figcaption { font-size: 0.85rem; color: #666; margin-top: 0.4rem; }
+    @media (prefers-color-scheme: dark) { .gallery img { border-color: #3a3a3a; } .gallery figcaption { color: #c9c9c9; } }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="index.html">Publications</a>
+    <a href="work.html">What I build, and why</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="blog.html">Blog</a>
+    <a href="library.html">My Library</a>
+    <a href="images.html" class="active" aria-current="page">Images</a>
+  </nav>
+  <h1 class="header-title">Images</h1>
+  <div class="gallery">
+    <figure>
+      <a href="images/photo-01.jpg" target="_blank" rel="noopener noreferrer"><img src="images/photo-01.jpg" alt="Photo 1" width="1600" height="900" loading="lazy" decoding="async"></a>
+      <figcaption>Photo 1</figcaption>
+    </figure>
+    <figure>
+      <a href="images/photo-02.jpg" target="_blank" rel="noopener noreferrer"><img src="images/photo-02.jpg" alt="Photo 2" width="1600" height="1066" loading="lazy" decoding="async"></a>
+      <figcaption>Photo 2</figcaption>
+    </figure>
+    <figure>
+      <a href="images/photo-03.jpg" target="_blank" rel="noopener noreferrer"><img src="images/photo-03.jpg" alt="Photo 3" width="1600" height="900" loading="lazy" decoding="async"></a>
+      <figcaption>Photo 3</figcaption>
+    </figure>
+  </div>
+</body>
+</html>
