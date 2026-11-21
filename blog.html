@@ -126,6 +126,16 @@
         <p>{{ p.excerpt }}</p>
       </article>
       <p v-if="posts.length === 0">No posts yet.</p>
+      <div v-if="unlocked">
+        <h3 style="margin-top:2rem;">Drafts (private)</h3>
+        <article class="post-card" v-for="p in drafts" :key="p.id" @click="open(p)">
+          <div><span class="post-tag">{{ p.tag }}</span> &nbsp;<span class="post-date">{{ p.date }}</span></div>
+          <h2 class="post-title">{{ p.title }}</h2>
+          <p>{{ p.excerpt }}</p>
+        </article>
+        <p v-if="drafts.length === 0">No drafts.</p>
+      </div>
+      <p v-else style="margin-top:2rem;"><span class="back-link" @click="askPass()">&#128274; Drafts</span></p>
     </div>
     <article v-else>
       <p><span class="back-link" @click="current = null">&larr; All posts</span></p>
@@ -173,8 +183,26 @@
       }
     ];
     Vue.createApp({
-      data() { return { posts: POSTS, current: null }; },
-      methods: { open(p) { this.current = p; window.scrollTo(0, 0); } }
+      data() { return { posts: POSTS, drafts: DRAFTS, current: null, unlocked: localStorage.getItem("blogDraftKey") === "1001" }; },
+      methods: {
+        open(p) { this.current = p; window.scrollTo(0, 0); },
+        askPass() {
+          const k = prompt("Password for drafts:");
+          if (k === "1001") { localStorage.setItem("blogDraftKey", "1001"); this.unlocked = true; this.openFromHash(); }
+          else if (k !== null) { alert("Wrong password."); }
+        },
+        openFromHash() {
+          const m = location.hash.match(/#draft=([a-z0-9-]+)/i);
+          if (m && this.unlocked) {
+            const d = DRAFTS.find(x => x.id === m[1]);
+            if (d) { this.open(d); }
+          }
+        }
+      },
+      mounted() {
+        if (/#draft=/.test(location.hash) && !this.unlocked) { this.askPass(); }
+        else { this.openFromHash(); }
+      }
     }).mount("#app");
   </script>
 </body>
