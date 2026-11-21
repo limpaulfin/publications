@@ -18,6 +18,14 @@ button:disabled{opacity:.4;cursor:default}
 a{color:#C1440E}
 .k{display:inline-block;background:#C1440E;color:#ffffff;font-size:.72rem;font-weight:600;padding:.18rem .55rem;border-radius:12px;margin-right:.5rem;vertical-align:2px}
 .item{padding:12px 2px;border-bottom:1px solid #e0e0e0}
+.item{display:flex;gap:12px;align-items:flex-start}
+.it-main{flex:1 1 auto;min-width:0}
+.it-thumb{flex:0 0 auto;width:72px;height:96px;border-radius:4px;object-fit:cover;background:#eee}
+.hero{margin:0 0 1rem}
+.hero img{display:block;width:100%;height:auto;max-height:260px;object-fit:cover;object-position:center 30%;border-radius:8px;border:1px solid #e0e0e0}
+@media (max-width:600px){.it-thumb{width:60px;height:80px}}
+@media (prefers-color-scheme:dark){.hero img{border-color:#3a3a3a}}
+
 .it-title{font-weight:700;font-size:1.08rem;line-height:1.4}
 .it-f{display:flex;gap:.6rem;margin:.18rem 0;font-size:.95rem}
 .it-k{flex:0 0 5.4rem;color:#666;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding-top:.2rem}
@@ -58,6 +66,7 @@ a{color:#C1440E}
   </nav>
 <main>
 <h1>My Library</h1>
+<figure class="hero"><img src="images/bw-01.jpg" alt="Photo" width="1400" height="788" decoding="async"></figure>
 <p class="sub" id="sub">Loading...</p>
 <div class="bar">
 <input id="q" type="search" placeholder="Search title, author, year, DOI" aria-label="Search">
@@ -88,12 +97,12 @@ function link(d){if(!d)return'';if(d.indexOf('https://doi.org/')===0)return'<a h
 function render(){
  var s=page*N,e=Math.min(s+N,view.length);var h='';
  for(var i=s;i<e;i++){var r=view[i];
-  h+='<div class="item"><div class="it-title"><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'+(r.p?'<span class="k" style="background:#F37021;color:#fff;margin-left:.35rem">NEW</span>':'')
+  h+='<div class="item"><div class="it-main"><div class="it-title"><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'+(r.p?'<span class="k" style="background:#F37021;color:#fff;margin-left:.35rem">NEW</span>':'')
     +(r._ct?esc(r._ct):'<span class="untitled">Untitled</span>')+'</div>';
   if(r.a)h+='<div class="it-f"><span class="it-k">Author</span><span>'+esc(r.a)+'</span></div>';
   if(r.y)h+='<div class="it-f"><span class="it-k">Year</span><span>'+(r.q?'~':'')+esc(r.y)+'</span></div>';
   if(r.d)h+='<div class="it-f"><span class="it-k">'+(r.d.indexOf('https://doi.org/')===0?'DOI':'ID')+'</span><span>'+link(r.d)+'</span></div>';
-  h+='</div>'}
+  h+='</div>'+(r.c?'<img class="it-thumb" src="library-thumbs/'+esc(r.c)+'" alt="" width="72" height="96" loading="lazy" decoding="async">':'')+'</div>'}
  $('rows').innerHTML=h||'<p>No match.</p>';
  $('pos').textContent=view.length?(s+1)+'-'+e+' of '+view.length:'0';
  $('prev').disabled=page===0;$('next').disabled=e>=view.length}
