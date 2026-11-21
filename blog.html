@@ -94,6 +94,19 @@
     .site-nav a { color: inherit; text-decoration: none; font-weight: 600; font-size: 0.98rem; }
     .site-nav a:hover { color: #F37021; }
     .site-nav a.active { color: #F37021; border-bottom: 2px solid #F37021; }
+  
+    [v-cloak] { display: none; }
+    .pin-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 50; }
+    .pin-card { background: #fff; color: #222; border-radius: 16px; padding: 24px 24px 18px; width: min(320px, 88vw); text-align: center; box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .pin-title { font-weight: 600; margin: 0 0 6px; }
+    .pin-sub { margin: 0 0 14px; font-size: 0.9em; color: #666; }
+    .pin-dots { font-size: 26px; letter-spacing: 12px; margin: 6px 0 16px; min-height: 34px; }
+    .pin-dots.error { color: #c0392b; animation: pinshake 0.3s; }
+    @keyframes pinshake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+    .pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .pin-key { font-size: 22px; padding: 13px 0; border: 1px solid #ddd; background: #f7f7f7; border-radius: 12px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .pin-key:active { transform: scale(0.93); background: #ececec; }
+    .pin-key.fn { font-size: 15px; color: #555; }
   </style>
   <style>
     .post-card { border: 1px solid #e5e5e5; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; cursor: pointer; }
@@ -118,7 +131,7 @@
     <p class="header-subtitle">Short notes on Bayesian inference, RAG and agentic AI, and the stories behind the papers. By Thanh-Phong Lam.</p>
   </header>
 
-  <main id="app">
+  <main id="app" v-cloak>
     <div v-if="!current">
       <article class="post-card" v-for="p in posts" :key="p.id" @click="open(p)">
         <div><span class="post-tag">{{ p.tag }}</span> &nbsp;<span class="post-date">{{ p.date }}</span></div>
@@ -143,6 +156,19 @@
       <h2 class="post-title">{{ current.title }}</h2>
       <p v-for="(para, i) in current.body" :key="i">{{ para }}</p>
     </article>
+    <div class="pin-overlay" v-if="showPad" @click.self="closePad()">
+      <div class="pin-card">
+        <p class="pin-title">&#128274; Drafts</p>
+        <p class="pin-sub">Enter the 4-digit pass</p>
+        <div class="pin-dots" :class="{ error: pinError }">{{ pinDots }}</div>
+        <div class="pin-grid">
+          <button class="pin-key" v-for="n in [1,2,3,4,5,6,7,8,9]" :key="n" @click="press(n)">{{ n }}</button>
+          <button class="pin-key fn" @click="closePad()">Cancel</button>
+          <button class="pin-key" @click="press(0)">0</button>
+          <button class="pin-key fn" @click="backspace()">&#9003;</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
@@ -183,13 +209,30 @@
       }
     ];
     Vue.createApp({
-      data() { return { posts: POSTS, drafts: DRAFTS, current: null, unlocked: localStorage.getItem("blogDraftKey") === "1001" }; },
+      data() { return { posts: POSTS, drafts: DRAFTS, current: null, unlocked: localStorage.getItem("blogDraftKey") === "1001", showPad: false, pin: "", pinError: false }; },
+      computed: {
+        pinDots() { return "\u25CF".repeat(this.pin.length) + "\u25CB".repeat(Math.max(0, 4 - this.pin.length)); }
+      },
       methods: {
         open(p) { this.current = p; window.scrollTo(0, 0); },
-        askPass() {
-          const k = prompt("Password for drafts:");
-          if (k === "1001") { localStorage.setItem("blogDraftKey", "1001"); this.unlocked = true; this.openFromHash(); }
-          else if (k !== null) { alert("Wrong password."); }
+        askPass() { this.pin = ""; this.pinError = false; this.showPad = true; },
+        closePad() { this.showPad = false; this.pin = ""; },
+        press(n) {
+          if (this.pin.length >= 4) { return; }
+          this.pinError = false;
+          this.pin += String(n);
+          if (this.pin.length === 4) { this.submitPin(); }
+        },
+        backspace() { this.pin = this.pin.slice(0, -1); this.pinError = false; },
+        submitPin() {
+          if (this.pin === "1001") { localStorage.setItem("blogDraftKey", "1001"); this.unlocked = true; this.closePad(); this.openFromHash(); }
+          else { this.pinError = true; setTimeout(() => { this.pin = ""; }, 350); }
+        },
+        onKey(e) {
+          if (!this.showPad) { return; }
+          if (/^[0-9]$/.test(e.key)) { this.press(Number(e.key)); }
+          else if (e.key === "Backspace") { this.backspace(); }
+          else if (e.key === "Escape") { this.closePad(); }
         },
         openFromHash() {
           const m = location.hash.match(/#draft=([a-z0-9-]+)/i);
@@ -200,6 +243,7 @@
         }
       },
       mounted() {
+        window.addEventListener("keydown", this.onKey);
         if (/#draft=/.test(location.hash) && !this.unlocked) { this.askPass(); }
         else { this.openFromHash(); }
       }
