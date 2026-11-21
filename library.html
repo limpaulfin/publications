@@ -87,7 +87,7 @@ function link(d){if(!d)return'';if(d.indexOf('https://doi.org/')===0)return'<a h
 function render(){
  var s=page*N,e=Math.min(s+N,view.length);var h='';
  for(var i=s;i<e;i++){var r=view[i];
-  h+='<div class="item"><div class="it-title"><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'
+  h+='<div class="item"><div class="it-title"><span class="k">'+(r.k==='b'?'book':'paper')+'</span>'+(r.p?'<span class="k" style="background:#F37021;color:#fff;margin-left:.35rem">NEW</span>':'')
     +(r._ct?esc(r._ct):'<span class="untitled">Untitled</span>')+'</div>';
   if(r.a)h+='<div class="it-f"><span class="it-k">Author</span><span>'+esc(r.a)+'</span></div>';
   if(r.y)h+='<div class="it-f"><span class="it-k">Year</span><span>'+(r.q?'~':'')+esc(r.y)+'</span></div>';
@@ -102,7 +102,7 @@ function filter(){
  page=0;render()}
 fetch('library.json').then(function(r){return r.json()}).then(function(d){
  d.forEach(function(r){r._ct=cleanTitle(r.t)});
- d.sort(function(x,y){var a=x._ct.toLowerCase(),b=y._ct.toLowerCase();if(!a)return 1;if(!b)return -1;return a<b?-1:a>b?1:0});
+ d.sort(function(x,y){var px=x.p||0,py=y.p||0;if(px!==py)return py-px;var a=x._ct.toLowerCase(),b=y._ct.toLowerCase();if(!a)return 1;if(!b)return -1;return a<b?-1:a>b?1:0});
  data=d;var b=d.filter(function(r){return r.k==='b'}).length;
  $('sub').textContent=b.toLocaleString('en')+' books and '+(d.length-b).toLocaleString('en')+' papers';
  filter()}).catch(function(){$('sub').textContent='Could not load library.json'});

@@ -152,6 +152,26 @@
         ]
       }
     ];
+    // DRAFTS - unpublished drafts. To publish one, move its entry into POSTS above.
+    const DRAFTS = [
+      {
+        id: "storytelling-books",
+        date: "2026-11-21",
+        tag: "Notes",
+        title: "Những cuốn sách dạy tôi kể chuyện",
+        excerpt: "Tôi viết khoa học nhiều năm mà người đọc cứ quên. Tôi đi tìm sách về kể chuyện. Đây là những cuốn tôi gom được, và vì sao tôi để chúng lên đầu thư viện.",
+        body: [
+          "Tôi viết bài khoa học đã nhiều năm. Bài nào cũng có số liệu. Bài nào cũng đúng. Nhưng người đọc đọc xong là quên. Tôi không hiểu vì sao.",
+          "Một bài viết không ai nhớ thì coi như chưa viết. Mấy tháng làm việc mất hết. Tôi thấy nản mỗi lần ngồi xuống viết bài mới.",
+          "Tôi quyết định đi học kể chuyện. Tôi tìm sách. Cuốn đầu tiên là Bí Mật Của Người Kể Chuyện của Carmine Gallo. Sách nói một điều đơn giản: người ta tin một câu chuyện trước, rồi mới tin số liệu sau.",
+          "Sau đó tôi đọc Story Genius của Lisa Cron. Sách dạy cách xây câu chuyện sao cho người đọc muốn đọc tiếp. Tôi đọc Made to Stick của hai anh em Heath. Sách dạy cách làm cho một ý tưởng dính lại trong đầu người nghe.",
+          "Tôi làm việc với số liệu mỗi ngày. Nên tôi đọc thêm Storytelling with Data của Cole Nussbaumer Knaflic. Sách dạy kể chuyện bằng biểu đồ. Và Introduction to Data Visualization and Storytelling của Berengueres. Sách dạy biến hình vẽ thành câu chuyện.",
+          "Tôi cũng đọc Story Engine của Kyle Gray để học kể chuyện thương hiệu. Tôi đọc User Story Mapping của Jeff Patton để học kể câu chuyện của người dùng. Tôi đọc Writing Great Fiction để học mẹo của người viết truyện. Cuối cùng, tôi đọc Steve Jobs của Walter Isaacson. Đọc để xem một người kể chuyện giỏi đã sống như thế nào.",
+          "Bây giờ những cuốn này nằm chung một chỗ trong thư viện của tôi. Tôi để chúng lên trên cùng. Mỗi lần viết, tôi mở ra xem lại. Tôi viết để người đọc nhớ. Không chỉ để người đọc hiểu.",
+          "Có người sẽ nói: khoa học là khoa học, kể chuyện là việc của nhà văn. Ngày xưa tôi cũng nghĩ vậy. Nhưng số liệu không tự nói được. Phải có người kể, số liệu mới thành tiếng nói. Ai không tin, cứ thử viết một bài không có câu chuyện. Rồi xem người đọc nhớ được bao lâu."
+        ]
+      }
+    ];
     Vue.createApp({
       data() { return { posts: POSTS, current: null }; },
       methods: { open(p) { this.current = p; window.scrollTo(0, 0); } }
